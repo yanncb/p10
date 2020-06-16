@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<div>
+<div th:insert="header.html"/>
+<div class="container" style="margin-top:5%">
+
+<h1>S'identifier</h1>
+
+    <form th:action="@{/login}" method="post">
+        <label>Numéro de carte de bibliotheque :</label>
+        <input type="text" name="username" path="username" id="username" th:value="${username}"/>
+        <label>Mot de passe :</label>
+        <input type="password" name="password" path="password" id="password" th:value="${password}"/>
+
+    <button type="submit" value="valider" class="btn btn-success">Valider</button>
+    <a class="btn btn-danger" href="/">Cancel</a>
+    </form>
+
+</div>
+</div>
+</body>
+</html>

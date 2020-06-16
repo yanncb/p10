@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche d'ouvrages</title>
+</head>
+<body>
+<div th:insert="header.html"/>
+
+<div class="container" style="margin-top:5%">
+
+    <h1>Liste des livres</h1>
+
+    <form th:action="@{/recherche}" method="get">
+        <label>Mot clé :</label>
+        <input type="text" name="motCle" th:value="${motCle}"/>
+        <button class="btn btn-primary">Chercher</button>
+    </form>
+
+    <div class="cstyle">
+        <table class="table listTableDeco">
+            <thead>
+            <tr>
+                <th>Titre :</th>
+                <th>Nom de l'Auteur</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="livre:${livreBeanList}">
+                <td><a th:href="@{/livre/{id}(id=${livre.id})}" th:text="${livre.titre}"></a></td>
+                <td th:text="${livre.auteur}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:if="${livreBeanList.isEmpty()}">
+        <p>Aucun livres ne correspond à vos critères</p>
+    </div>
+</div>
+</di>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Livre</title>
+</head>
+<body>
+    <div th:insert="header.html"/>
+    <h1 class="text-center">Détails du livre <p th:text="${livre.titre}"/></h1>
+        <div class="cstyle">
+            <table class="table listTableDeco">
+                <thead>
+                    <tr>
+                        <th>Titre :</th>
+                        <th>Nom de l'Auteur</th>
+                        <th>Nombre d'exemplaire disponible</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:href="@{/details-livre/{id}(id=${livre.id})}" th:each="livre, livrStat : ${livre}">
+                        <td th:text="${livre.titre}"></td>
+                        <td th:text="${livre.auteur}"></td>
+                        <td th:text="${nbExemplaires}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

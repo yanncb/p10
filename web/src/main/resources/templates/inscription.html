@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+</head>
+<div>
+    <div th:insert="header.html"/>
+    <div class="container" style="margin-top:5%">
+
+        <h1>S'inscrire</h1>
+
+        <form th:action="@{/inscription}" method="post">
+            <label>Nom :</label>
+            <input type="text" name="nom" path="nom" id="nom" th:value="${nom}"/>
+            <label>Prénom :</label>
+            <input type="text" name="prenom" path="prenom" id="prenom" th:value="${prenom}"/>
+            <label>adresse :</label>
+            <input type="text" name="adresse" path="adresse" id="adresse" th:value="${adresse}"/>
+            <label>Numéro de téléphone :</label>
+            <input type="text" name="numeroDeTelephone" path="numeroDeTelephone" id="numeroDeTelephone" th:value="${numeroDeTelephone}"/>
+            <label>mail :</label>
+            <input type="email" name="mail" path="mail" id="mail" th:value="${mail}"/>
+            <label>Mot de passe :</label>
+            <input type="password" name="motDePasse" path="motDePasse" id="motDePasse" th:value="${motDePasse}"/>
+            <label>numéro de carte de bibliotheque :</label>
+            <input type="text" name="numCarte" path="numCarte" id="numCarte" th:value="${numCarte}"/>
+
+            <button type="submit" value="valider" class="btn btn-success">Valider</button>
+            <a class="btn btn-danger" href="/">Cancel</a>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

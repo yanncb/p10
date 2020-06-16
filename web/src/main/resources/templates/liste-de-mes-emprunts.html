@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes emprunts</title>
+</head>
+<body>
+<div th:insert="header.html"/>
+
+<div class="container">
+
+    <h1>Liste des livres</h1>
+
+
+    <th:text th:each="livre : ${livreBeans}">
+
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                    <img class="card-img-top" src="#" alt="Card image cap">
+
+
+                    <div class="card-body">
+                        <p class="card-title"></p>
+                        <p class="card-text"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Titre : <a th:href="@{/livre/{id}(id=${livre.id})}"
+                                                               th:text="${livre.titre}"/></li>
+                        <li class="list-group-item">Auteur : <p th:text="${livre.auteur}"/></li>
+
+                        <th:text th:each="exemplaire : ${livre.exemplaireList}">
+
+                            <li class="list-group-item">Date de l'emprunt : <p
+                                    th:text="${#dates.format(exemplaire.dateDemprunt, 'yyyy-MM-dd')}"/></li>
+                            <li class="list-group-item">Date de retour : <p th:text="${exemplaire.dateRetour}"/></li>
+                            <li class="list-group-item">La date d'emprunt est prolongée : <p
+                                    th:text="${exemplaire.prolongerEmprunt}"/></li>
+                            <li class="list-group-item">Prolongation ? : <a th:if="${!exemplaire.isProlongerEmprunt()}"
+                                                                            th:href="@{/prolonger-emprunt/{id}(id=${exemplaire.id})}"
+                                                                            class="btn btn-success">Prolonger
+                                l'emprunt</a></li>
+
+                        </th:text>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </th:text>
+
+    <div th:if="${livreBeans.isEmpty()}">
+        <p>Vous n'avez aucun livre, venez à la bibliotheque en prendre de nouveaux.</p>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

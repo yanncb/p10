@@ -6,16 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="p10" />
         <module name="batch" />
         <module name="services" />
         <module name="web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="batch" target="13" />
-      <module name="services" target="13" />
-      <module name="web" target="13" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

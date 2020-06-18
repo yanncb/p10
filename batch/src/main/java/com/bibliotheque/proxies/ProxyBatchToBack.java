@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "microservice-back", url = "localhost:9001")
+@FeignClient(name = "microservice-back", url = "localhost:9000")
 public interface ProxyBatchToBack {
 
     @GetMapping(value = "/livres-en-retard")

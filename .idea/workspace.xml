@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592402959252</updated>
-      <workItem from="1592402964073" duration="4212000" />
+      <workItem from="1592402964073" duration="8723000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592406432047</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="projet fonctionnement initial ok. modification des ports.">
+      <created>1592472556522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592472556522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +136,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ajout" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="projet fonctionnement initial ok. modification des ports." />
+    <option name="LAST_COMMIT_MESSAGE" value="projet fonctionnement initial ok. modification des ports." />
   </component>
 </project>

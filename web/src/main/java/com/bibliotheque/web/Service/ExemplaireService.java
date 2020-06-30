@@ -1,5 +1,6 @@
 package com.bibliotheque.web.Service;
 
+import com.bibliotheque.web.beans.ExemplaireBean;
 import com.bibliotheque.web.beans.LivreBean;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +13,5 @@ public interface ExemplaireService {
      * @return nombre d'exemplaire disponible non prété
      */
     int calculNbDispo(LivreBean livre);
+    boolean empruntEstPossible(ExemplaireBean exemplaireBean);
 }

@@ -15,6 +15,15 @@ public class ExemplaireBean {
 
     private LocalDate dateRetour;
 
+    public boolean isEmpruntEstPossible() {
+        return empruntEstPossible;
+    }
+
+    public void setEmpruntEstPossible(boolean empruntEstPossible) {
+        this.empruntEstPossible = empruntEstPossible;
+    }
+
+    private boolean empruntEstPossible;
 
     public BibliothequeBean getBibliotheque() {
         return bibliotheque;

@@ -21,6 +21,7 @@ public class LivreServiceImpl implements LivreService {
     public static final int PERIODE_PROLONGEE_DE_PRET = 60;
     private static final int PERIODE_INITIALE_DE_PRET = 30;
 
+
     @Autowired
     LivreRepository livreRepository;
 
@@ -65,7 +66,19 @@ public class LivreServiceImpl implements LivreService {
         return livres;
     }
 
+    //TODO finir les boucles for pour y inclure le nombre de personnes avant nous prochaine dispo, et numero dans la file. Je veux retourner la liste de livre reservé par utilisateur + date de retour la plus proche pour chaque livre
+    public List<Livre> rechercherTousLesLivresReserveParUtilisateur(int utilisateurId) {
+        List<Livre> livreList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
+//        for (Livre livre : livreList) {
+////                rechercherDateRetourLaPlusproche(livre.getId());
+//            livreList.add(rechercherDateRetourLaPlusproche(livre.getId()));
+//        }
+        return livreList;
 
+    }
+
+
+    //TODO A TESTER
     private Exemplaire calculerDateRetour(Exemplaire exemplaire) {
         if (exemplaire.isProlongerEmprunt()) {
             exemplaire.setDateRetour(exemplaire.getDateDemprunt().plusDays(PERIODE_PROLONGEE_DE_PRET));
@@ -75,7 +88,7 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
-
+    //TODO A TESTER en MOCK
     public List<Livre> trouverLesLivresDontLesExemplairesSontEnRetard() {
         List<Livre> livresEmpruntes = livreRepository.rechercherLivreDontExemplaireEnRetard();
         List<Livre> livreARendre = new ArrayList<>();
@@ -110,9 +123,55 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
+//    public List<Exemplaire> trouverLexemplaireAvecLaDateDeRetourLaPlusProche(int utilisateurId) {
+//
+//        List<Livre> livreList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
+//        List<Exemplaire> exemplairesAvecLaDateDeRetourLaPlusProche = new ArrayList<>();
+//
+//        for (Livre livre : livreList) {
+//            List<Exemplaire> exemplaireADateProche = new ArrayList<>();
+//            Exemplaire exemplaireLePlusProche = new Exemplaire();
+//
+//
+//            for (Exemplaire exemplaire : livre.getExemplaireList()) {
+//
+//                if (exemplaire.getDateRetour().isBefore(exemplaireLePlusProche.getDateRetour()) && (exemplaire.getDateRetour().isAfter(LocalDate.now()))) {
+//                    exemplaireADateProche.add(exemplaire);
+//                }
+//            }
+//            if (!exemplaireADateProche.isEmpty()) {
+//                exemplairesAvecLaDateDeRetourLaPlusProche.add(exemplaireLePlusProche);
+//            }
+//        }
+//        return exemplairesAvecLaDateDeRetourLaPlusProche;
+//    }
+
+    // TODO A VERIFIER
+    public Livre rechercherDateRetourLaPlusproche(int LivreId) {
+        return livreRepository.findById(LivreId).get();
+//        Livre livre = null;
+//        List<Livre> livreList = livreRepository.findAll();
+//        Exemplaire exemplaireLePlusProche = new Exemplaire();
+//        exemplaireLePlusProche.setDateRetour(LocalDate.now().minusYears(4));
+//        for (Livre livre1 : livreList) {
+//
+//            for (Exemplaire exemplaire : livre1.getExemplaireList()) {
+//                if (exemplaire.isPret()) {
+//                    if (exemplaire.getDateRetour().isAfter(exemplaireLePlusProche.getDateRetour()) || !exemplaire.getDateRetour().isBefore(LocalDate.now()))
+//                        exemplaireLePlusProche = exemplaire;
+//                }
+//                livre = livre1;
+//            }
+//
+//
+//        }
+//        return livre;
+    }
+
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------
 
+    //TODO A TESTER en MOCK
 
     @Override
     public Exemplaire creerEmprunt(int exemplaireId, int utilisateurId) {
@@ -124,6 +183,8 @@ public class LivreServiceImpl implements LivreService {
         exemplaireRepository.save(exemplaire);
         return exemplaire;
     }
+
+    //TODO A TESTER en MOCK
 
     @Override
     public Exemplaire retourEmprunt(int exemplaireId) {

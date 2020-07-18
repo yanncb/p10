@@ -1,6 +1,7 @@
 package com.bibliotheque.web.controller;
 
 import com.bibliotheque.web.Service.ExemplaireService;
+import com.bibliotheque.web.beans.ExemplaireBean;
 import com.bibliotheque.web.beans.LivreBean;
 import com.bibliotheque.web.beans.UtilisateurBean;
 import com.bibliotheque.web.proxies.MServiceBack;
@@ -11,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -39,6 +42,10 @@ public class ViewController {
 
         LivreBean livre = rechercherLivres.recupererUnLivre(id);
         int nbExemplaires = exemplaireService.calculNbDispo(livre);
+        ExemplaireBean exemplaireBean = new ExemplaireBean();
+        exemplaireBean.setProchaineDispo(LocalDate.now());
+
+        model.addAttribute("exemplaireBean", exemplaireBean);
         model.addAttribute("nbExemplaires", nbExemplaires);
         model.addAttribute("livre", livre);
 
@@ -62,5 +69,18 @@ public class ViewController {
         return "redirect:/liste-de-mes-emprunts";
     }
 
+    @GetMapping(value = "/liste-de-mes-reservations")
+    public String afficherMesReservations(Model model, Authentication authentication){
+        UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
+        List<LivreBean> livreBeansList = rechercherLivres.rechercherTousLesLivresReserveParUtilisateur(utilisateurBean.getId());
+        ExemplaireBean exemplaireBean = new ExemplaireBean();
+        exemplaireBean.setPositionFile(1);
+        exemplaireBean.setProchaineDispo(LocalDate.now());
+        //TODO Avoir un seul exemplaire par livre.
+        // TODO creer methode rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible
+        model.addAttribute("livreBeans", livreBeansList);
+        model.addAttribute("exemplaireBean", exemplaireBean);
+        return "liste-de-mes-reservations";
+    }
 
 }

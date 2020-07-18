@@ -23,14 +23,16 @@ public class ExemplaireServiceImpl implements ExemplaireService {
         return nbExemplaires;
     }
 
-    public boolean empruntEstPossible(ExemplaireBean exemplaireBean){
+    public void empruntEstPossible(ExemplaireBean exemplaireBean){
         LocalDate localDate;
 
         if (exemplaireBean.getDateRetour().isBefore(LocalDate.now())){
             exemplaireBean.setEmpruntEstPossible(false);
-            return false;
         }
         exemplaireBean.setEmpruntEstPossible(true);
-        return true;
     }
+
+
+
+
 }

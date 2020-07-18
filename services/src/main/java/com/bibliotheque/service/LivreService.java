@@ -69,6 +69,21 @@ public interface LivreService {
      */
      List<Livre> trouverLesLivresDontLesExemplairesSontEnRetard();
 
+    /**
+     * Methode permettant de retourner la liste de livre etant reservé par un utilisateur.
+     * @param id id de l'utilisateur
+     * @return liste de livre reservé par un utilisateur
+     */
+     List<Livre> rechercherTousLesLivresReserveParUtilisateur(int id);
+//
+//    /**
+//     * Methode permettant de recuperer l'exemplaire avec la date de retour la plus proche
+//     * @param utilisateurId sers à identifier l'utilisateur pour utiliser la liste de livres liée à cet utilisateur
+//     * @return une liste avec un exemplaire par livre ayant la date la plus proche.
+//     */
+//     List<Exemplaire> trouverLexemplaireAvecLaDateDeRetourLaPlusProche(int utilisateurId);
+
+     Livre rechercherDateRetourLaPlusproche(int livreId);
     }
 
 

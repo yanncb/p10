@@ -13,5 +13,8 @@ public interface ExemplaireService {
      * @return nombre d'exemplaire disponible non prété
      */
     int calculNbDispo(LivreBean livre);
-    boolean empruntEstPossible(ExemplaireBean exemplaireBean);
+
+    void empruntEstPossible(ExemplaireBean exemplaireBean);
+
+
 }

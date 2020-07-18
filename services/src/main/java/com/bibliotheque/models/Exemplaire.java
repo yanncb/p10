@@ -39,6 +39,28 @@ public class Exemplaire {
     @Transient
     private LocalDate dateRetour;
 
+    @Transient
+    private LocalDate prochaineDispo;
+
+    @Transient
+    private int positionFile;
+
+    public LocalDate getProchaineDispo() {
+        return prochaineDispo;
+    }
+
+    public void setProchaineDispo(LocalDate prochaineDispo) {
+        this.prochaineDispo = prochaineDispo;
+    }
+
+    public int getPositionFile() {
+        return positionFile;
+    }
+
+    public void setPositionFile(int positionFile) {
+        this.positionFile = positionFile;
+    }
+
     public Exemplaire() {
     }
 
@@ -98,6 +120,8 @@ public class Exemplaire {
                 ", pret=" + pret +
                 ", dateDemprunt=" + dateDemprunt +
                 ", prolongerEmprunt=" + prolongerEmprunt +
+                ", prochaineDispo=" + prochaineDispo +
+                ", positionFile=" + positionFile +
                 '}';
     }
 }

@@ -53,11 +53,19 @@ public class LivreController {
         return livreList;
     }
 
+    @GetMapping(value = "liste-de-mes-reservations/{utilisateurId}")
+    public List<Livre> listeExemplaireReserve(@PathVariable("utilisateurId") Integer id) {
+        List<Livre> livreList = livreService.rechercherTousLesLivresReserveParUtilisateur(id);
+        return livreList;
+    }
+
     @PostMapping("prolonger-emprunt/{exemplaireId}")
     public Exemplaire prolongerEmprunt(@PathVariable("exemplaireId") Integer id) {
         Exemplaire exemplaire = livreService.prolongerEmPrunt(id);
         return exemplaire;
     }
+
+
 
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------

@@ -2,11 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ReservationBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Exemplaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Livre.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Livre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,12 +29,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
         <option name="jdkForImporter" value="13" />
       </MavenImportingSettings>
     </option>
@@ -27,6 +51,7 @@
   <component name="ProjectId" id="1dRzzwBQH0LS9OPzO3ZC7ehvrgY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -40,6 +65,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bibliotheque.web.beans" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -86,7 +116,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592402959252</updated>
-      <workItem from="1592402964073" duration="8723000" />
+      <workItem from="1592402964073" duration="11632000" />
+      <workItem from="1593519142872" duration="1696000" />
+      <workItem from="1593523612177" duration="19477000" />
+      <workItem from="1594643085604" duration="22015000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -116,7 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592472556522</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Réparation d'un bug. Si date limite est dépassé plus possible de prolonger l'emprunt.">
+      <created>1593506474668</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593506474668</updated>
+    </task>
+    <task id="LOCAL-00006" summary="modification du versionning des pom passage en 0.0.2 RELEASE">
+      <created>1593506575287</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593506575287</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +174,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -137,6 +186,8 @@
     <MESSAGE value="ajout" />
     <MESSAGE value="first commit" />
     <MESSAGE value="projet fonctionnement initial ok. modification des ports." />
-    <option name="LAST_COMMIT_MESSAGE" value="projet fonctionnement initial ok. modification des ports." />
+    <MESSAGE value="Réparation d'un bug. Si date limite est dépassé plus possible de prolonger l'emprunt." />
+    <MESSAGE value="modification du versionning des pom passage en 0.0.2 RELEASE" />
+    <option name="LAST_COMMIT_MESSAGE" value="modification du versionning des pom passage en 0.0.2 RELEASE" />
   </component>
 </project>

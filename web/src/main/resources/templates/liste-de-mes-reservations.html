@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mes réservations</title>
+</head>
+<body>
+<div th:insert="header.html"/>
+
+<div class="container">
+
+    <h1>Liste des livres</h1>
+
+
+    <th:text th:each="livre : ${livreBeans}">
+
+        <div class="cstyle">
+            <table class="table listTableDeco">
+                <thead>
+                <tr>
+                    <th>Titre :</th>
+                    <th>Nom de l'Auteur</th>
+                    <th>Prochaine dsiponibilité</th>
+                    <th>Position dans la file</th>
+                    <th>Annuler ma réservation</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td th:text="${livre.titre}"></td>
+                    <td th:text="${livre.auteur}"></td>
+                    <td th:text="${exemplaireBean.getProchaineDispo()}"></td>
+                    <td th:text="${exemplaireBean.getPositionFile()}"></td>
+                    <td th:href="@{/annuler-reservation/{id}(id=${livre.id})}" class="btn btn-success">Annuler</a></td>
+
+
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </th:text>
+    <!--//TODO a modifier-->
+    <div th:if="${livreBeans.isEmpty()}">
+        <p>Vous n'avez aucune réservation de livre en cours.</p>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

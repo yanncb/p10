@@ -23,6 +23,9 @@ public interface MServiceBack {
     @GetMapping(value = "liste-de-mes-emprunts/{utilisateurId}")
     List<LivreBean> rechercherTousLesLivresPourUtilisateur(@PathVariable("utilisateurId") Integer id);
 
+    @GetMapping(value = "liste-de-mes-reservations/{utilisateurId}")
+    List<LivreBean> rechercherTousLesLivresReserveParUtilisateur(@PathVariable("utilisateurId") Integer id);
+
     @PostMapping(value = "prolonger-emprunt/{exemplaireId}")
     ExemplaireBean prolongeremprunt(@PathVariable("exemplaireId") Integer id);
 

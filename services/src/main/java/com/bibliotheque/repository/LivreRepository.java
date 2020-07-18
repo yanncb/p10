@@ -20,4 +20,15 @@ public interface LivreRepository extends JpaRepository<Livre, Integer> {
 
     @Query("select distinct l from Livre l  join fetch l.exemplaireList e join fetch Utilisateur u on u = e.utilisateur WHERE e.pret = true")
     List<Livre> rechercherLivreDontExemplaireEnRetard();
+
+    // TODO finir la requete et ajouter un order By pour faire le tri de la liste d'attente.
+    @Query("select distinct l from Livre l join fetch l.reservationList r join fetch r.utilisateur u WHERE u.id = :id")
+    List<Livre> rechercherTousLesLivresReserveParUtilisateur(@Param("id") int id);
+
+    //
+//    @Query("select MAX(e.dateEmprunt) from Exemplaire e join fetch Livre l where l.id = :livreId")
+//        Livre trouverDateDeRetourLaPlusProche(@Param("livreId") int livreId);
+
+
+
 }

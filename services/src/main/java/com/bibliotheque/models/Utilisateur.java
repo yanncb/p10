@@ -41,6 +41,9 @@ public class Utilisateur {
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     private List<Exemplaire> exemplaireList;
 
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+    private List<Reservation> reservationList;
+
     public Utilisateur() {
     }
 

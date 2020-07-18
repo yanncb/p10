@@ -22,6 +22,9 @@ public class Livre {
     @OneToMany(mappedBy = "livre", cascade = CascadeType.ALL)
     private List<Exemplaire> exemplaireList;
 
+    @OneToMany(mappedBy = "livre", cascade = CascadeType.ALL)
+    private List<Reservation> reservationList;
+
     public Livre() {
     }
 

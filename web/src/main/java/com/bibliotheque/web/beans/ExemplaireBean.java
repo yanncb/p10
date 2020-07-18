@@ -15,6 +15,25 @@ public class ExemplaireBean {
 
     private LocalDate dateRetour;
 
+    private LocalDate prochaineDispo;
+    private int positionFile;
+
+    public LocalDate getProchaineDispo() {
+        return prochaineDispo;
+    }
+
+    public void setProchaineDispo(LocalDate prochaineDispo) {
+        this.prochaineDispo = prochaineDispo;
+    }
+
+    public int getPositionFile() {
+        return positionFile;
+    }
+
+    public void setPositionFile(int positionFile) {
+        this.positionFile = positionFile;
+    }
+
     public boolean isEmpruntEstPossible() {
         return empruntEstPossible;
     }
@@ -88,6 +107,8 @@ public class ExemplaireBean {
                 ", pret=" + pret +
                 ", dateDemprunt=" + dateDemprunt +
                 ", prolongerEmprunt=" + prolongerEmprunt +
+                ", positionFile=" + positionFile +
+                ", empruntEstPossible=" + empruntEstPossible +
                 '}';
     }
 }

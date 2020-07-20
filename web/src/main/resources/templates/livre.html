@@ -25,9 +25,9 @@
             <td th:text="${livre.auteur}"></td>
             <td th:text="${nbExemplaires}"></td>
             <td th:text="${exemplaireBean.prochaineDispo}"></td>
-            <td th:if="${nbExemplaires == 0}"><a th:href="@{/mailReservation/{id}(id=${livre.id})}"
+            <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{id}(id=${livre.id})}"
                                                  class="btn btn-success">M'avertir par mail</a></td>
-
+<!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le mem ouvreage en cours-->
         </tr>
         </tbody>
     </table>

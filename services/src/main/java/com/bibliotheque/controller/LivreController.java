@@ -7,6 +7,8 @@ import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -65,8 +67,41 @@ public class LivreController {
         return exemplaire;
     }
 
+    @GetMapping("/prochaineDispo/{livreId}")
+    public Exemplaire dateProchaineDispo(@PathVariable("livreId") int livreId){
+        Exemplaire exemplaire = new Exemplaire();
+        exemplaire.setProchaineDispo(LocalDate.now());
+        return exemplaire;
+    }
 
+    @PostMapping("/reserverLivre/{livreId}")
+    public Livre reserverLivre(@PathVariable("livreId") int livreId){
+        Livre livre = new Livre();
+        return livre;
+    }
 
+    @GetMapping("/rechercherLivreReserveParUtilisateur/{utilisateurId}")
+    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId){
+        List<Livre> livreList = new ArrayList<>();
+        Livre livre = new Livre();
+        livre.setId(12);
+        livre.setAuteur("Rulio");
+        livre.setTitre("julio");
+        List<Exemplaire> exemplaireList = new ArrayList<>() ;
+        Exemplaire exemplaire = new Exemplaire();
+        exemplaire.setProchaineDispo(LocalDate.now());
+        exemplaire.setPositionFile(2);
+        exemplaireList.add(exemplaire);
+        livre.setExemplaireList(exemplaireList);
+        livreList.add(livre);
+
+        return livreList;
+    }
+
+    @PostMapping(value = "/annuler-reservation/{livreId}")
+    public Livre annulerReservation(@PathVariable("livreId") Integer livreId){
+        return null;
+    }
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------
 
@@ -81,5 +116,7 @@ public class LivreController {
         Exemplaire exemplaire = livreService.retourEmprunt(exemplaireId);
         return exemplaire;
     }
+
+
 
 }

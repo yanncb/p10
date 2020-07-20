@@ -29,6 +29,16 @@ public class UtilisateurBean implements Serializable, UserDetails {
 
     private List<LivreBean> livresList;
 
+    private List<ReservationBean> reservationList;
+
+    public List<ReservationBean> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<ReservationBean> reservationList) {
+        this.reservationList = reservationList;
+    }
+
     public List<RoleBean> getRoles() {
         return roles;
     }

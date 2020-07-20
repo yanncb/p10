@@ -20,7 +20,7 @@
                 <tr>
                     <th>Titre :</th>
                     <th>Nom de l'Auteur</th>
-                    <th>Prochaine dsiponibilité</th>
+                    <th>Prochaine disponibilité</th>
                     <th>Position dans la file</th>
                     <th>Annuler ma réservation</th>
                 </tr>
@@ -30,10 +30,19 @@
                 <tr>
                     <td th:text="${livre.titre}"></td>
                     <td th:text="${livre.auteur}"></td>
-                    <td th:text="${exemplaireBean.getProchaineDispo()}"></td>
-                    <td th:text="${exemplaireBean.getPositionFile()}"></td>
-                    <td th:href="@{/annuler-reservation/{id}(id=${livre.id})}" class="btn btn-success">Annuler</a></td>
+                    <th:text th:each="livreAvecUnSeulExem : ${livreAvec}">
 
+                        <th:text th:each="exemplaire : ${livreAvecUnSeulExem.exemplaireList}">
+
+                            <td th:text="${exemplaire.getProchaineDispo()}"></td>
+                            <td th:text="${exemplaire.getPositionFile()}"></td>
+
+
+                        </th:text>
+                    </th:text>
+
+                    <td><a th:href="@{/annuler-reservation/{id}(id=${livre.id})}" class="btn btn-success">Annuler</a>
+                    </td>
 
                 </tr>
                 </tbody>

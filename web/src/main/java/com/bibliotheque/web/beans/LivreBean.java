@@ -1,6 +1,5 @@
 package com.bibliotheque.web.beans;
 
-import java.util.Date;
 import java.util.List;
 
 public class LivreBean {
@@ -10,6 +9,15 @@ public class LivreBean {
     private String auteur;
 
     private List<ExemplaireBean> exemplaireList;
+    private List<ReservationBean> reservationList;
+
+    public List<ReservationBean> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<ReservationBean> reservationList) {
+        this.reservationList = reservationList;
+    }
 
     public List<ExemplaireBean> getExemplaireList() {
         return exemplaireList;
@@ -42,7 +50,6 @@ public class LivreBean {
     public void setAuteur(String auteur) {
         this.auteur = auteur;
     }
-
 
 
     @Override

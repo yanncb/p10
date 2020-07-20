@@ -16,6 +16,7 @@ public class ExemplaireBean {
     private LocalDate dateRetour;
 
     private LocalDate prochaineDispo;
+
     private int positionFile;
 
     public LocalDate getProchaineDispo() {

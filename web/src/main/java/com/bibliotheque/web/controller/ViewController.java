@@ -42,24 +42,24 @@ public class ViewController {
         int nbUtilisateurAyantReserve = exemplaireService.calculNbReservation(livre);
         LivreBean livreBean = rechercherLivres.prochaineDispo(livre.getId());
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
-//        ExemplaireBean exemplaireBean = new ExemplaireBean();
-//        exemplaireBean.setProchaineDispo(LocalDate.now());
-        //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ... et coder l'action du bouton
+        //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ...
         model.addAttribute("livreBean", livreBean);
         model.addAttribute("nbExemplaires", nbExemplaires);
         model.addAttribute("nbReservation", nbUtilisateurAyantReserve);
         model.addAttribute("livre", livre);
         model.addAttribute("utilisateur", utilisateurBean);
 
-
         return "livre";
     }
+
 //TODO FINIR
-    @GetMapping(value = "/reserver/{livreId}")
-    public String reserverUnLivreDesProchaineDispo(Model model, @PathVariable int livreId) {
+    @GetMapping(value = "/reserver/{livreId}/{utilisateurId}")
+    public String reserverUnLivre(Model model, @PathVariable int livreId, Authentication authentication) {
         LivreBean livre = rechercherLivres.recupererUnLivre(livreId);
+        UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
         model.addAttribute("livre", livre);
-        rechercherLivres.reserverLivre(livreId);
+        model.addAttribute("utilisateur", utilisateurBean);
+        rechercherLivres.reserverLivre(livreId, utilisateurBean.getId());
 
         return "redirect:/liste-de-mes-reservations";
     }

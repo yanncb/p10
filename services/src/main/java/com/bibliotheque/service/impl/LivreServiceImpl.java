@@ -6,6 +6,7 @@ import com.bibliotheque.models.Reservation;
 import com.bibliotheque.models.Utilisateur;
 import com.bibliotheque.repository.ExemplaireRepository;
 import com.bibliotheque.repository.LivreRepository;
+import com.bibliotheque.repository.ReservationRepository;
 import com.bibliotheque.repository.UtilisateurRepository;
 import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,8 @@ public class LivreServiceImpl implements LivreService {
     @Autowired
     UtilisateurRepository utilisateurRepository;
 
+    @Autowired
+    ReservationRepository reservationRepository;
     @Override
     public List<Livre> rechercherTousLesLivres() {
         return livreRepository.findAll();
@@ -172,36 +175,8 @@ public class LivreServiceImpl implements LivreService {
 
     }
 
-    public Livre dateProchaineDispo(int livreId){
-
-        Livre livre = new Livre();
-        livre.setId(12);
-        livre.setAuteur("Rulio");
-        livre.setTitre("julio");
-        List<Exemplaire> exemplaireList = new ArrayList<>() ;
-        Exemplaire exemplaire = new Exemplaire();
-        exemplaire.setProchaineDispo(LocalDate.now());
-        exemplaire.setPositionFile(2);
-        exemplaireList.add(exemplaire);
-        exemplaire.setDateRetour(LocalDate.now());
-        livre.setExemplaireList(exemplaireList);
-
-        return livre;
-    }
-
-    public Livre reservationLivre(int livreId){
-        Livre livre = new Livre();
-        return livre;
-    }
-
-    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId){
-
-        List<Livre> livreList = rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
-        for (Livre livre: livreList) {
-            rechercherDateRetourLaPlusproche(livre.getId());
-        }
-
-//        List<Livre> livreList = new ArrayList<>();
+//    public Livre dateProchaineDispo(int livreId){
+//
 //        Livre livre = new Livre();
 //        livre.setId(12);
 //        livre.setAuteur("Rulio");
@@ -211,8 +186,29 @@ public class LivreServiceImpl implements LivreService {
 //        exemplaire.setProchaineDispo(LocalDate.now());
 //        exemplaire.setPositionFile(2);
 //        exemplaireList.add(exemplaire);
+//        exemplaire.setDateRetour(LocalDate.now());
 //        livre.setExemplaireList(exemplaireList);
-//        livreList.add(livre);
+//
+//        return livre;
+//    }
+
+    public Livre reservationLivre(int livreId, int utilisateurId){
+        Livre livre = livreRepository.findById(livreId);
+        Utilisateur utilisateur = utilisateurRepository.findById(utilisateurId);
+        for (Reservation reservation : livre.getReservationList()) {
+            reservation.setUtilisateur(utilisateur);
+            reservation.setLivre(livre);
+            reservationRepository.save(reservation);
+        }
+        return livre;
+    }
+
+    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId){
+
+        List<Livre> livreList = rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
+        for (Livre livre: livreList) {
+            rechercherDateRetourLaPlusproche(livre.getId());
+        }
 
         return livreList;
     }

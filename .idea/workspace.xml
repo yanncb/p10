@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/Service/ExemplaireServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,6 +23,7 @@
       <list>
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -108,7 +109,7 @@
       <workItem from="1592402964073" duration="11632000" />
       <workItem from="1593519142872" duration="1696000" />
       <workItem from="1593523612177" duration="19477000" />
-      <workItem from="1594643085604" duration="57391000" />
+      <workItem from="1594643085604" duration="60448000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -173,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595324837713</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ajout methode pour affichage nombre de personnes ayant reservé.">
+      <created>1595338222913</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1595338222913</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,19 +219,20 @@
     <MESSAGE value="finalisation des IHM en bouchonné ." />
     <MESSAGE value="déplacement du bouchon depuis les controller front aux controller back + ajout des fonctions des boutons bochonnés." />
     <MESSAGE value="debug de la boucle infini et bug json, finalisation fonctionnalité de l'exemplaire avec la date la plus proche" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug de la boucle infini et bug json, finalisation fonctionnalité de l'exemplaire avec la date la plus proche" />
+    <MESSAGE value="ajout methode pour affichage nombre de personnes ayant reservé." />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout methode pour affichage nombre de personnes ayant reservé." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>168</line>
+          <line>171</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>84</line>
+          <line>87</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>

@@ -73,9 +73,9 @@ public class LivreController {
         return livre;
     }
 
-    @PostMapping("/reserverLivre/{livreId}")
-    public Livre reserverLivre(@PathVariable("livreId") int livreId){
-    Livre livre = livreService.reservationLivre(livreId);
+    @PostMapping("/reserverLivre/{livreId}/{utilisateurId}")
+    public Livre reserverLivre(@PathVariable("livreId") int livreId, @PathVariable("utilisateurId") int utilisateurId){
+    Livre livre = livreService.reservationLivre(livreId, utilisateurId);
         return livre;
     }
 

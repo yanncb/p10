@@ -91,7 +91,7 @@ public interface LivreService {
      Livre rechercherDateRetourLaPlusproche(int livreId);
 
 
-    Livre reservationLivre(int livreId);
+    Livre reservationLivre(int livreId, int utilisateurId);
 
     /**
      * Recherche tous les exemplaires reservé par utilisateur avec pour chaque livre un seul exemplaire (qui est celui dont la date de retour est la plus proche).

@@ -12,50 +12,53 @@
     <h1>Liste des livres</h1>
 
 
-    <th:text th:each="livre : ${livreBeans}">
+    <div class="cstyle">
+        <table class="table listTableDeco">
+            <thead>
+            <tr>
+                <th>Titre :</th>
+                <th>Nom de l'Auteur</th>
+                <th>Prochaine disponibilité</th>
+                <th>Position dans la file</th>
+                <th>Annuler ma réservation</th>
+            </tr>
+            </thead>
 
-        <div class="cstyle">
-            <table class="table listTableDeco">
-                <thead>
-                <tr>
-                    <th>Titre :</th>
-                    <th>Nom de l'Auteur</th>
-                    <th>Prochaine disponibilité</th>
-                    <th>Position dans la file</th>
-                    <th>Annuler ma réservation</th>
-                </tr>
-                </thead>
+            <tbody>
+            <tr>
+                <th:text th:each="livre : ${livreAvec}">
 
-                <tbody>
-                <tr>
                     <td th:text="${livre.titre}"></td>
                     <td th:text="${livre.auteur}"></td>
                     <th:text th:each="livreAvecUnSeulExem : ${livreAvec}">
 
                         <th:text th:each="exemplaire : ${livreAvecUnSeulExem.exemplaireList}">
 
+                            <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant
+                                nous attendons les retardataires...
+                            </td>
+
                             <td th:text="${exemplaire.getProchaineDispo()}"></td>
                             <td th:text="${exemplaire.getPositionFile()}"></td>
-
 
                         </th:text>
                     </th:text>
 
-                    <td><a th:href="@{/annuler-reservation(id=${livre.id},utilisateurId=${utilisateurId})}" class="btn btn-success">Annuler</a>
+                    <td><a th:href="@{/annuler-reservation(id=${livre.id},utilisateurId=${utilisateurId})}"
+                           class="btn btn-success">Annuler</a>
 
-<!--                    <td><a th:href="@{/annuler-reservation/{id}(id=${livre.id}){utilisateurId}(utilisateurId=${utilisateur.id})" class="btn btn-success">Annuler</a>-->
                     </td>
+                </th:text>
 
-                </tr>
-                </tbody>
+            </tr>
+            </tbody>
 
-            </table>
+        </table>
 
-        </div>
+    </div>
 
-    </th:text>
     <!--//TODO a modifier-->
-    <div th:if="${livreBeans.isEmpty()}">
+    <div th:if="${livreAvec.isEmpty()}">
         <p>Vous n'avez aucune réservation de livre en cours.</p>
     </div>
 </div>

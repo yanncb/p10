@@ -3,6 +3,7 @@ package com.bibliotheque.web.Service;
 
 import com.bibliotheque.web.beans.ExemplaireBean;
 import com.bibliotheque.web.beans.LivreBean;
+import com.bibliotheque.web.beans.ReservationBean;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,6 +22,16 @@ public class ExemplaireServiceImpl implements ExemplaireService {
             }
         }
         return nbExemplaires;
+    }
+
+    public int  calculNbReservation(LivreBean livre){
+        int nbReservation=0;
+        for (ReservationBean reservation : livre.getReservationList()) {
+            if (!livre.getReservationList().isEmpty()){
+                nbReservation++;
+            }
+        }
+        return nbReservation;
     }
 
     public void empruntEstPossible(ExemplaireBean exemplaireBean){

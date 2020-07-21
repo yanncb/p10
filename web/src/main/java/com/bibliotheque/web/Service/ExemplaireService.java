@@ -14,6 +14,8 @@ public interface ExemplaireService {
      */
     int calculNbDispo(LivreBean livre);
 
+    int calculNbReservation(LivreBean livre);
+
     void empruntEstPossible(ExemplaireBean exemplaireBean);
 
 

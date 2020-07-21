@@ -156,9 +156,9 @@ public class LivreServiceImpl implements LivreService {
         exemplaireComparaison.setDateRetour(LocalDate.now().minusYears(4));
 
             for (Exemplaire exemplaire1 : livre.getExemplaireList()) {
-               exemplaire1 =calculerDateRetour(exemplaire1);
 
                 if (exemplaire1.isPret()) {
+                    calculerDateRetour(exemplaire1);
                     if (exemplaire1.getDateRetour().isAfter(exemplaireComparaison.getDateRetour()) || !exemplaireComparaison.getDateRetour().isBefore(LocalDate.now()))
                         exemplaireComparaison = exemplaire1;
                 }
@@ -196,18 +196,23 @@ public class LivreServiceImpl implements LivreService {
 
     public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId){
 
-        List<Livre> livreList = new ArrayList<>();
-        Livre livre = new Livre();
-        livre.setId(12);
-        livre.setAuteur("Rulio");
-        livre.setTitre("julio");
-        List<Exemplaire> exemplaireList = new ArrayList<>() ;
-        Exemplaire exemplaire = new Exemplaire();
-        exemplaire.setProchaineDispo(LocalDate.now());
-        exemplaire.setPositionFile(2);
-        exemplaireList.add(exemplaire);
-        livre.setExemplaireList(exemplaireList);
-        livreList.add(livre);
+        List<Livre> livreList = rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
+        for (Livre livre: livreList) {
+            rechercherDateRetourLaPlusproche(livre.getId());
+        }
+
+//        List<Livre> livreList = new ArrayList<>();
+//        Livre livre = new Livre();
+//        livre.setId(12);
+//        livre.setAuteur("Rulio");
+//        livre.setTitre("julio");
+//        List<Exemplaire> exemplaireList = new ArrayList<>() ;
+//        Exemplaire exemplaire = new Exemplaire();
+//        exemplaire.setProchaineDispo(LocalDate.now());
+//        exemplaire.setPositionFile(2);
+//        exemplaireList.add(exemplaire);
+//        livre.setExemplaireList(exemplaireList);
+//        livreList.add(livre);
 
         return livreList;
     }

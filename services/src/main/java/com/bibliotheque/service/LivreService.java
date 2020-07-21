@@ -83,10 +83,21 @@ public interface LivreService {
 //     */
 //     List<Exemplaire> trouverLexemplaireAvecLaDateDeRetourLaPlusProche(int utilisateurId);
 
+    /**
+     * Recherche la date de retour d'un exemplaire du livre avec la date de retour la plus proche
+     * @param livreId id du livre
+     * @return le livre avec un exemplaire qui est celui dont la date est la plus proche
+     */
      Livre rechercherDateRetourLaPlusproche(int livreId);
+
 
     Livre reservationLivre(int livreId);
 
+    /**
+     * Recherche tous les exemplaires reservé par utilisateur avec pour chaque livre un seul exemplaire (qui est celui dont la date de retour est la plus proche).
+     * @param utilisateurId l'id de l'utilisateur pour pouvoir recuperer la liste de livre
+     * @return une liste de livre avec un exemplaire par livre
+     */
     List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId);
 
     void annulerReservation(int livreId, int utilisateurId);

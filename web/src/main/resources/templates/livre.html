@@ -15,6 +15,7 @@
             <th>Nom de l'Auteur</th>
             <th>Nombre d'exemplaire disponible</th>
             <th>Prochaine disponibilité</th>
+            <th>Nombre de personnes ayant réservé</th>
             <th>Me prévenir par mail</th>
         </tr>
         </thead>
@@ -25,12 +26,18 @@
             <td th:text="${livre.auteur}"></td>
             <td th:text="${nbExemplaires}"></td>
             <th:text th:each="exemplaire : ${livreBean.exemplaireList}">
-            <td th:text="${exemplaire.dateRetour}"></td>
-            <td th:if="${exemplaire.dateRetour == null}">Aucune disponibilité pour l'instant nous attendons les retardataires...</td>
+                <td th:text="${exemplaire.dateRetour}"></td>
+                <td th:if="${exemplaire.dateRetour == null}">Aucune disponibilité pour l'instant nous attendons les
+                    retardataires...
+                </td>
             </th:text>
-            <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{id}(id=${livre.id})}"
-                                                 class="btn btn-success">Réserver le prochain livre disponible</a></td>
-<!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le meme ouvrage en cours-->
+                <!--        //TODO ajouter nombre de personnes ayant reservé-->
+                <td th:if="${nbReservation == 0}">Aucune réservatiion en cours</td>
+                <td th:text="${nbReservation}"></td>
+
+                <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{id}(id=${livre.id})}" class="btn btn-success">Réserver le prochain livre disponible</a></td>
+
+                <!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le meme ouvrage en cours-->
         </tr>
         </tbody>
     </table>

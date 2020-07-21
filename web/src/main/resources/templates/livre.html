@@ -24,10 +24,13 @@
             <td th:text="${livre.titre}"></td>
             <td th:text="${livre.auteur}"></td>
             <td th:text="${nbExemplaires}"></td>
-            <td th:text="${exemplaireBean.prochaineDispo}"></td>
+            <th:text th:each="exemplaire : ${livreBean.exemplaireList}">
+            <td th:text="${exemplaire.dateRetour}"></td>
+            <td th:if="${exemplaire.dateRetour == null}">Aucune disponibilité pour l'instant nous attendons les retardataires...</td>
+            </th:text>
             <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{id}(id=${livre.id})}"
-                                                 class="btn btn-success">M'avertir par mail</a></td>
-<!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le mem ouvreage en cours-->
+                                                 class="btn btn-success">Réserver le prochain livre disponible</a></td>
+<!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le meme ouvrage en cours-->
         </tr>
         </tbody>
     </table>

@@ -20,6 +20,13 @@ public class Reservation {
     @JoinColumn(name = "livre_id", nullable = false)
     private Livre livre;
 
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
 
 }
 

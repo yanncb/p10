@@ -5,10 +5,13 @@ import java.util.List;
 public class LivreBean {
 
     private int id;
+
     private String titre;
+
     private String auteur;
 
     private List<ExemplaireBean> exemplaireList;
+
     private List<ReservationBean> reservationList;
 
     public List<ReservationBean> getReservationList() {

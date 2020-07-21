@@ -43,12 +43,12 @@ public class ViewController {
 
         LivreBean livre = rechercherLivres.recupererUnLivre(id);
         int nbExemplaires = exemplaireService.calculNbDispo(livre);
-        ExemplaireBean exemplaireBean = rechercherLivres.prochaineDispo(livre.getId());
+        LivreBean livreBean = rechercherLivres.prochaineDispo(livre.getId());
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
 //        ExemplaireBean exemplaireBean = new ExemplaireBean();
 //        exemplaireBean.setProchaineDispo(LocalDate.now());
         //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ...
-        model.addAttribute("exemplaireBean", exemplaireBean);
+        model.addAttribute("livreBean", livreBean);
         model.addAttribute("nbExemplaires", nbExemplaires);
         model.addAttribute("livre", livre);
         model.addAttribute("utilisateur", utilisateurBean);
@@ -89,23 +89,23 @@ public class ViewController {
         List<LivreBean> livreBeansList = rechercherLivres.rechercherTousLesLivresReserveParUtilisateur(utilisateurBean.getId());
         List<LivreBean> livreAvecUnSeulExemplaireList = rechercherLivres.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurBean.getId());
 
-//        ExemplaireBean exemplaireBean = new ExemplaireBean();
-//        exemplaireBean.setPositionFile(1);
-//        exemplaireBean.setProchaineDispo(LocalDate.now());
         //TODO Avoir un seul exemplaire par livre.
         // TODO creer methode rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible
         model.addAttribute("livreAvec", livreAvecUnSeulExemplaireList);
         model.addAttribute("livreBeans", livreBeansList);
+        model.addAttribute("utilisateurId", ((UtilisateurBean) authentication.getPrincipal()).getId());
+
 //        model.addAttribute("exemplaireBean", exemplaireBean);
         return "liste-de-mes-reservations";
     }
 
-    @GetMapping(value = "/annuler-reservation/{livreId}")
-    public String annulerReservation(Model model, @PathVariable int livreId){
+    @GetMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")
+    public String annulerReservation(Model model, @PathVariable int livreId, Authentication authentication){
         LivreBean livre = rechercherLivres.recupererUnLivre(livreId);
+        UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
+        rechercherLivres.annulerReservation(livreId, utilisateurBean.getId() );
         model.addAttribute("livre", livre);
-        rechercherLivres.annulerReservation(livreId);
-
+        model.addAttribute("utilisateur", ((UtilisateurBean) authentication.getPrincipal()).getId());
         return "redirect:/liste-de-mes-reservations";
 
     }

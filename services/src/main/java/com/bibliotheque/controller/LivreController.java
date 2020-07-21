@@ -68,39 +68,27 @@ public class LivreController {
     }
 
     @GetMapping("/prochaineDispo/{livreId}")
-    public Exemplaire dateProchaineDispo(@PathVariable("livreId") int livreId){
-        Exemplaire exemplaire = new Exemplaire();
-        exemplaire.setProchaineDispo(LocalDate.now());
-        return exemplaire;
+    public Livre dateProchaineDispo(@PathVariable("livreId") int livreId){
+       Livre livre = livreService.rechercherDateRetourLaPlusproche(livreId);
+        return livre;
     }
 
     @PostMapping("/reserverLivre/{livreId}")
     public Livre reserverLivre(@PathVariable("livreId") int livreId){
-        Livre livre = new Livre();
+    Livre livre = livreService.reservationLivre(livreId);
         return livre;
     }
 
     @GetMapping("/rechercherLivreReserveParUtilisateur/{utilisateurId}")
     public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId){
-        List<Livre> livreList = new ArrayList<>();
-        Livre livre = new Livre();
-        livre.setId(12);
-        livre.setAuteur("Rulio");
-        livre.setTitre("julio");
-        List<Exemplaire> exemplaireList = new ArrayList<>() ;
-        Exemplaire exemplaire = new Exemplaire();
-        exemplaire.setProchaineDispo(LocalDate.now());
-        exemplaire.setPositionFile(2);
-        exemplaireList.add(exemplaire);
-        livre.setExemplaireList(exemplaireList);
-        livreList.add(livre);
-
-        return livreList;
+        //TODO UN SEUL EXEMPLAIRE A FAIRE REMONTER !
+    List<Livre> listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche = livreService.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurId);
+        return listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche;
     }
 
-    @PostMapping(value = "/annuler-reservation/{livreId}")
-    public Livre annulerReservation(@PathVariable("livreId") Integer livreId){
-        return null;
+    @PostMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")
+    public void annulerReservation(@PathVariable("livreId") Integer livreId, @PathVariable("utilisateurId") Integer utilisateurId){
+        livreService.annulerReservation(livreId, utilisateurId);
     }
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------

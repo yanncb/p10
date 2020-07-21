@@ -84,6 +84,12 @@ public interface LivreService {
 //     List<Exemplaire> trouverLexemplaireAvecLaDateDeRetourLaPlusProche(int utilisateurId);
 
      Livre rechercherDateRetourLaPlusproche(int livreId);
-    }
+
+    Livre reservationLivre(int livreId);
+
+    List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId);
+
+    void annulerReservation(int livreId, int utilisateurId);
+}
 
 

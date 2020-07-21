@@ -34,9 +34,17 @@ public class Livre {
         this.exemplaireList = exemplaireList;
     }
 
+    public List<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
     public List<Exemplaire> getExemplaireList() {
         return exemplaireList;
     }
+
 
     public void setExemplaireList(List<Exemplaire> exemplaireList) {
         this.exemplaireList = exemplaireList;

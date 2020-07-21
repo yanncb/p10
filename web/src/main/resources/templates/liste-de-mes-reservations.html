@@ -41,7 +41,9 @@
                         </th:text>
                     </th:text>
 
-                    <td><a th:href="@{/annuler-reservation/{id}(id=${livre.id})}" class="btn btn-success">Annuler</a>
+                    <td><a th:href="@{/annuler-reservation(id=${livre.id},utilisateurId=${utilisateurId})}" class="btn btn-success">Annuler</a>
+
+<!--                    <td><a th:href="@{/annuler-reservation/{id}(id=${livre.id}){utilisateurId}(utilisateurId=${utilisateur.id})" class="btn btn-success">Annuler</a>-->
                     </td>
 
                 </tr>

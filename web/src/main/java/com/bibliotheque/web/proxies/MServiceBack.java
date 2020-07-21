@@ -37,7 +37,7 @@ public interface MServiceBack {
 
 
     @GetMapping(value = "/prochaineDispo/{livreId}")
-    ExemplaireBean prochaineDispo(@PathVariable("livreId") int livreId);
+    LivreBean prochaineDispo(@PathVariable("livreId") int livreId);
 
     @PostMapping(value = "/reserverLivre/{livreId}")
     LivreBean reserverLivre(@PathVariable("livreId") int livreId);
@@ -45,7 +45,7 @@ public interface MServiceBack {
     @GetMapping(value = "/rechercherLivreReserveParUtilisateur/{utilisateurId}")
     List<LivreBean> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId);
 
-    @PostMapping(value = "/annuler-reservation/{livreId}")
-    LivreBean annulerReservation(@PathVariable("livreId") int livreId);
+    @PostMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")
+    LivreBean annulerReservation(@PathVariable("livreId") int livreId, @PathVariable("utilisateurId") int utilisateurId);
 
 }

@@ -4,9 +4,13 @@
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ExemplaireBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Livre.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Livre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/LivreBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/LivreBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/UtilisateurBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/UtilisateurBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ReservationBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/beans/ReservationBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/proxies/MServiceBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
@@ -108,7 +112,7 @@
       <workItem from="1592402964073" duration="11632000" />
       <workItem from="1593519142872" duration="1696000" />
       <workItem from="1593523612177" duration="19477000" />
-      <workItem from="1594643085604" duration="32268000" />
+      <workItem from="1594643085604" duration="50087000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -159,11 +163,28 @@
       <option name="project" value="LOCAL" />
       <updated>1595067755883</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="déplacement du bouchon depuis les controller front aux controller back + ajout des fonctions des boutons bochonnés.">
+      <created>1595256343281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595256343281</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -185,22 +206,43 @@
     <MESSAGE value="Réparation d'un bug. Si date limite est dépassé plus possible de prolonger l'emprunt." />
     <MESSAGE value="modification du versionning des pom passage en 0.0.2 RELEASE" />
     <MESSAGE value="finalisation des IHM en bouchonné ." />
-    <option name="LAST_COMMIT_MESSAGE" value="finalisation des IHM en bouchonné ." />
+    <MESSAGE value="déplacement du bouchon depuis les controller front aux controller back + ajout des fonctions des boutons bochonnés." />
+    <option name="LAST_COMMIT_MESSAGE" value="déplacement du bouchon depuis les controller front aux controller back + ajout des fonctions des boutons bochonnés." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="2" />
+          <line>88</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="3" />
+          <line>89</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="ex" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

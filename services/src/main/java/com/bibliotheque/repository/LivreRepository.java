@@ -12,6 +12,11 @@ import java.util.List;
 @Repository
 public interface LivreRepository extends JpaRepository<Livre, Integer> {
 
+    Livre findById(int livreId);
+
+//    @Query("select l from Livre where l.id= :livreId and l.reservationList.utilisateur.id= :utilisateurId")
+//    Livre findByIdAndReserservationListUtilisateurId(int livreId, int utilisateurId);
+
     @Query("select l from Livre l where l.auteur like :motCle or l.titre like :motCle")
     List<Livre> rechercherParAuteurOuTitre(@Param("motCle") String motCle);
 

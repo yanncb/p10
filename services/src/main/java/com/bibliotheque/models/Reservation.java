@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Reservation {
 
     @Id
-    @SequenceGenerator(name = "RESERVATION_SEQ_GENERATOR", sequenceName = "RESERVATION_SEQ", initialValue = 2, allocationSize = 1)
+    @SequenceGenerator(name = "RESERVATION_SEQ_GENERATOR", sequenceName = "RESERVATION_SEQ", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RESERVATION_SEQ_GENERATOR")
     @Column(name = "reservation_id")
     private int id;

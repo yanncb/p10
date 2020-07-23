@@ -156,18 +156,21 @@ public class LivreServiceImpl implements LivreService {
         Livre livre = livreRepository.findById(livreId);
         List<Exemplaire> listExemplaire = new ArrayList<>();
         Exemplaire exemplaireComparaison = new Exemplaire();
-        exemplaireComparaison.setDateRetour(LocalDate.now().minusYears(4));
+        exemplaireComparaison.setDateRetour(LocalDate.now().minusMonths(1));
 
             for (Exemplaire exemplaire1 : livre.getExemplaireList()) {
 
                 if (exemplaire1.isPret()) {
                     calculerDateRetour(exemplaire1);
-                    if (exemplaire1.getDateRetour().isAfter(exemplaireComparaison.getDateRetour()) || !exemplaireComparaison.getDateRetour().isBefore(LocalDate.now()))
-                        exemplaireComparaison = exemplaire1;
+                    if (exemplaireComparaison.getDateRetour().isBefore(exemplaire1.getDateRetour()) && exemplaire1.getDateRetour().isAfter(LocalDate.now()))
+                    exemplaireComparaison = exemplaire1;
                 }
+                exemplaireComparaison.setProchaineDispo(exemplaireComparaison.getDateRetour());
+
             }
         listExemplaire.add(exemplaireComparaison);
             livre.setExemplaireList(listExemplaire);
+
 
         return livre;
 

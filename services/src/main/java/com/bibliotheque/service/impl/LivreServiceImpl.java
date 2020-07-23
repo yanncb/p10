@@ -195,11 +195,11 @@ public class LivreServiceImpl implements LivreService {
     public Livre reservationLivre(int livreId, int utilisateurId){
         Livre livre = livreRepository.findById(livreId);
         Utilisateur utilisateur = utilisateurRepository.findById(utilisateurId);
-        for (Reservation reservation : livre.getReservationList()) {
+        Reservation reservation = new Reservation();
             reservation.setUtilisateur(utilisateur);
             reservation.setLivre(livre);
             reservationRepository.save(reservation);
-        }
+
         return livre;
     }
 
@@ -242,6 +242,7 @@ public class LivreServiceImpl implements LivreService {
         exemplaire.setPret(false);
         exemplaire.setUtilisateur(null);
         exemplaire.setDateDemprunt(null);
+        exemplaire.setProlongerEmprunt(false);
         exemplaireRepository.save(exemplaire);
         return exemplaire;
     }

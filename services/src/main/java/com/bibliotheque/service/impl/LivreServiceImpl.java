@@ -35,6 +35,7 @@ public class LivreServiceImpl implements LivreService {
 
     @Autowired
     ReservationRepository reservationRepository;
+
     @Override
     public List<Livre> rechercherTousLesLivres() {
         return livreRepository.findAll();
@@ -73,12 +74,8 @@ public class LivreServiceImpl implements LivreService {
     //TODO finir les boucles for pour y inclure le nombre de personnes avant nous prochaine dispo, et numero dans la file. Je veux retourner la liste de livre reservé par utilisateur + date de retour la plus proche pour chaque livre
     public List<Livre> rechercherTousLesLivresReserveParUtilisateur(int utilisateurId) {
         List<Livre> livreList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
-//        for (Livre livre : livreList) {
-////                rechercherDateRetourLaPlusproche(livre.getId());
-//            livreList.add(rechercherDateRetourLaPlusproche(livre.getId()));
-//        }
-        return livreList;
 
+        return livreList;
     }
 
 
@@ -127,29 +124,6 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
-//    public List<Exemplaire> trouverLexemplaireAvecLaDateDeRetourLaPlusProche(int utilisateurId) {
-//
-//        List<Livre> livreList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
-//        List<Exemplaire> exemplairesAvecLaDateDeRetourLaPlusProche = new ArrayList<>();
-//
-//        for (Livre livre : livreList) {
-//            List<Exemplaire> exemplaireADateProche = new ArrayList<>();
-//            Exemplaire exemplaireLePlusProche = new Exemplaire();
-//
-//
-//            for (Exemplaire exemplaire : livre.getExemplaireList()) {
-//
-//                if (exemplaire.getDateRetour().isBefore(exemplaireLePlusProche.getDateRetour()) && (exemplaire.getDateRetour().isAfter(LocalDate.now()))) {
-//                    exemplaireADateProche.add(exemplaire);
-//                }
-//            }
-//            if (!exemplaireADateProche.isEmpty()) {
-//                exemplairesAvecLaDateDeRetourLaPlusProche.add(exemplaireLePlusProche);
-//            }
-//        }
-//        return exemplairesAvecLaDateDeRetourLaPlusProche;
-//    }
-
     // TODO A VERIFIER
     public Livre rechercherDateRetourLaPlusproche(int livreId) {
 
@@ -158,67 +132,47 @@ public class LivreServiceImpl implements LivreService {
         Exemplaire exemplaireComparaison = new Exemplaire();
         exemplaireComparaison.setDateRetour(LocalDate.now().minusMonths(1));
 
-            for (Exemplaire exemplaire1 : livre.getExemplaireList()) {
+        for (Exemplaire exemplaire1 : livre.getExemplaireList()) {
 
-                if (exemplaire1.isPret()) {
-                    calculerDateRetour(exemplaire1);
-                    if (exemplaireComparaison.getDateRetour().isBefore(exemplaire1.getDateRetour()) && exemplaire1.getDateRetour().isAfter(LocalDate.now()))
+            if (exemplaire1.isPret()) {
+                calculerDateRetour(exemplaire1);
+                if (exemplaireComparaison.getDateRetour().isBefore(exemplaire1.getDateRetour()) && exemplaire1.getDateRetour().isAfter(LocalDate.now()))
                     exemplaireComparaison = exemplaire1;
-                }
-                exemplaireComparaison.setProchaineDispo(exemplaireComparaison.getDateRetour());
-
             }
+            exemplaireComparaison.setProchaineDispo(exemplaireComparaison.getDateRetour());
+
+        }
         listExemplaire.add(exemplaireComparaison);
-            livre.setExemplaireList(listExemplaire);
+        livre.setExemplaireList(listExemplaire);
 
 
         return livre;
-
-//        return livreRepository.findById(LivreId);
-
     }
 
-//    public Livre dateProchaineDispo(int livreId){
-//
-//        Livre livre = new Livre();
-//        livre.setId(12);
-//        livre.setAuteur("Rulio");
-//        livre.setTitre("julio");
-//        List<Exemplaire> exemplaireList = new ArrayList<>() ;
-//        Exemplaire exemplaire = new Exemplaire();
-//        exemplaire.setProchaineDispo(LocalDate.now());
-//        exemplaire.setPositionFile(2);
-//        exemplaireList.add(exemplaire);
-//        exemplaire.setDateRetour(LocalDate.now());
-//        livre.setExemplaireList(exemplaireList);
-//
-//        return livre;
-//    }
-
-    public Livre reservationLivre(int livreId, int utilisateurId){
+    public Livre reservationLivre(int livreId, int utilisateurId) {
         Livre livre = livreRepository.findById(livreId);
         Utilisateur utilisateur = utilisateurRepository.findById(utilisateurId);
         Reservation reservation = new Reservation();
-            reservation.setUtilisateur(utilisateur);
-            reservation.setLivre(livre);
-            reservationRepository.save(reservation);
+        reservation.setUtilisateur(utilisateur);
+        reservation.setLivre(livre);
+        reservationRepository.save(reservation);
 
         return livre;
     }
 
-    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId){
+    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId) {
 
         List<Livre> livreList = rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
-        for (Livre livre: livreList) {
+        for (Livre livre : livreList) {
             rechercherDateRetourLaPlusproche(livre.getId());
         }
 
         return livreList;
     }
 
-    public void annulerReservation(int livreId, int utilisateurId){
-//       Livre livre = livreRepository.findByIdAndReserservationListUtilisateurId(livreId, utilisateurId);
-
+    public void annulerReservation(int livreId, int utilisateurId) {
+       Reservation reservation = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
+        reservationRepository.delete(reservation);
     }
 
 

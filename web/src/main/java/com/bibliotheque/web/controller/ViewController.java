@@ -84,7 +84,6 @@ public class ViewController {
     @GetMapping(value = "/liste-de-mes-reservations")
     public String afficherMesReservations(Model model, Authentication authentication) {
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
-//        List<LivreBean> livreBeansList = rechercherLivres.rechercherTousLesLivresReserveParUtilisateur(utilisateurBean.getId());
         List<LivreBean> livreAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList = rechercherLivres.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurBean.getId());
         model.addAttribute("livreAvec", livreAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList);
         model.addAttribute("utilisateurId", ((UtilisateurBean) authentication.getPrincipal()).getId());

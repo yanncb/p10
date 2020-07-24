@@ -10,9 +10,19 @@ public class LivreBean {
 
     private String auteur;
 
+    private int positionFile;
+
     private List<ExemplaireBean> exemplaireList;
 
     private List<ReservationBean> reservationList;
+
+    public int getPositionFile() {
+        return positionFile;
+    }
+
+    public void setPositionFile(int positionFile) {
+        this.positionFile = positionFile;
+    }
 
     public List<ReservationBean> getReservationList() {
         return reservationList;

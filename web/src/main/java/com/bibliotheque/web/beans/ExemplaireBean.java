@@ -27,13 +27,7 @@ public class ExemplaireBean {
         this.prochaineDispo = prochaineDispo;
     }
 
-    public int getPositionFile() {
-        return positionFile;
-    }
 
-    public void setPositionFile(int positionFile) {
-        this.positionFile = positionFile;
-    }
 
     public boolean isEmpruntEstPossible() {
         return empruntEstPossible;

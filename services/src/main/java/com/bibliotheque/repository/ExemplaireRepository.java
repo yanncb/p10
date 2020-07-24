@@ -13,6 +13,4 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
     Exemplaire findById(int exemplaireId);
 
 
-    List<Exemplaire> findByPretIsTrue();
-
 }

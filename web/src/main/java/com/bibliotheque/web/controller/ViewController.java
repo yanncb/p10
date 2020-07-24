@@ -42,7 +42,7 @@ public class ViewController {
         int nbUtilisateurAyantReserve = exemplaireService.calculNbReservation(livre);
         LivreBean livreBean = rechercherLivres.prochaineDispo(livre.getId());
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
-        //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ...
+        //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ... voir pour une condition !!!!!
         model.addAttribute("livreBean", livreBean);
         model.addAttribute("nbExemplaires", nbExemplaires);
         model.addAttribute("nbReservation", nbUtilisateurAyantReserve);
@@ -84,8 +84,8 @@ public class ViewController {
     @GetMapping(value = "/liste-de-mes-reservations")
     public String afficherMesReservations(Model model, Authentication authentication) {
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
-        List<LivreBean> livreAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList = rechercherLivres.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurBean.getId());
-        model.addAttribute("livreAvec", livreAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList);
+        List<LivreBean> livresAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList = rechercherLivres.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurBean.getId());
+        model.addAttribute("livresAvecUnSeulExemplaire", livresAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList);
         model.addAttribute("utilisateurId", ((UtilisateurBean) authentication.getPrincipal()).getId());
         return "liste-de-mes-reservations";
     }

@@ -71,11 +71,22 @@ public class LivreServiceImpl implements LivreService {
         return livres;
     }
 
-    //TODO finir les boucles for pour y inclure le nombre de personnes avant nous prochaine dispo, et numero dans la file. Je veux retourner la liste de livre reservé par utilisateur + date de retour la plus proche pour chaque livre
     public List<Livre> rechercherTousLesLivresReserveParUtilisateur(int utilisateurId) {
-        List<Livre> livreList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
+        List<Livre> livreReserveList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
 
-        return livreList;
+        for (Livre livreReserve : livreReserveList) {
+            List<Reservation> listeDattenteDesReservations = reservationRepository.findByLivreOrderById(livreReserve);
+            int positionDansLaListeDattente = 1;
+
+            for (Reservation reservation : listeDattenteDesReservations) {
+                if (reservation.getUtilisateur().getId() == utilisateurId) {
+                    livreReserve.setPositionFile(positionDansLaListeDattente);
+                }
+                positionDansLaListeDattente++;
+            }
+        }
+
+        return livreReserveList;
     }
 
 
@@ -155,8 +166,10 @@ public class LivreServiceImpl implements LivreService {
         Reservation reservation = new Reservation();
         reservation.setUtilisateur(utilisateur);
         reservation.setLivre(livre);
-        reservationRepository.save(reservation);
-
+        Reservation reservationDejaPresente = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
+        if (reservationDejaPresente == null) {
+            reservationRepository.save(reservation);
+        }
         return livre;
     }
 
@@ -171,7 +184,7 @@ public class LivreServiceImpl implements LivreService {
     }
 
     public void annulerReservation(int livreId, int utilisateurId) {
-       Reservation reservation = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
+        Reservation reservation = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
         reservationRepository.delete(reservation);
     }
 

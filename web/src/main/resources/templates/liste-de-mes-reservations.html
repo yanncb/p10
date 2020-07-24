@@ -26,24 +26,21 @@
 
             <tbody>
             <tr>
-                <th:text th:each="livre : ${livreAvec}">
+                <th:text th:each="livre : ${livresAvecUnSeulExemplaire}">
 
                     <td th:text="${livre.titre}"></td>
                     <td th:text="${livre.auteur}"></td>
-                    <th:text th:each="livreAvecUnSeulExem : ${livreAvec}">
 
-                        <th:text th:each="exemplaire : ${livreAvecUnSeulExem.exemplaireList}">
+                    <th:text th:each="exemplaire : ${livre.exemplaireList}">
 
-                            <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant
-                                nous attendons les retardataires...
-                            </td>
+                        <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant
+                            nous attendons les retardataires...
+                        </td>
 
-                            <td th:text="${exemplaire.getProchaineDispo()}"></td>
-                            <td th:text="${exemplaire.getPositionFile()}"></td>
+                        <td th:text="${exemplaire.getProchaineDispo()}"></td>
 
-                        </th:text>
                     </th:text>
-
+                    <td th:text="${livre.getPositionFile()}"></td>
 
                     <td>
                         <a th:href="@{/annuler-reservation/{livreId}/{utilisateurId}(livreId=${livre.id},utilisateurId=${utilisateurId})}"
@@ -59,7 +56,7 @@
     </div>
 
     <!--//TODO a modifier-->
-    <div th:if="${livreAvec.isEmpty()}">
+    <div th:if="${livresAvecUnSeulExemplaire.isEmpty()}">
         <p>Vous n'avez aucune réservation de livre en cours.</p>
     </div>
 </div>

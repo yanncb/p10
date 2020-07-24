@@ -25,6 +25,10 @@ public class Livre {
     @OneToMany(mappedBy = "livre", cascade = CascadeType.ALL)
     private List<Reservation> reservationList;
 
+    @Transient
+    private int positionFile;
+
+
     public Livre() {
     }
 
@@ -32,6 +36,14 @@ public class Livre {
         this.titre = titre;
         this.auteur = auteur;
         this.exemplaireList = exemplaireList;
+    }
+
+    public int getPositionFile() {
+        return positionFile;
+    }
+
+    public void setPositionFile(int positionFile) {
+        this.positionFile = positionFile;
     }
 
     public List<Reservation> getReservationList() {

@@ -129,8 +129,11 @@ public class LivreServiceImpl implements LivreService {
 
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
         exemplaire.setProlongerEmprunt(true);
-        exemplaireRepository.save(exemplaire);
         calculerDateRetour(exemplaire);
+
+        if (exemplaire.getDateRetour().isAfter(LocalDate.now())) {
+            exemplaireRepository.save(exemplaire);
+        }
 
         return exemplaire;
     }

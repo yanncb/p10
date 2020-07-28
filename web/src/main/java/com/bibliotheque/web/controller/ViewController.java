@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -68,6 +70,8 @@ public class ViewController {
     public String afficherMesEmprunts(Model model, Authentication authentication) {
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
         List<LivreBean> livreBeans = rechercherLivres.rechercherTousLesLivresPourUtilisateur(utilisateurBean.getId());
+        LocalDate date = LocalDate.now();;
+        model.addAttribute("dateDuJour", date);
         model.addAttribute("livreBeans", livreBeans);
         return "liste-de-mes-emprunts";
     }
@@ -85,6 +89,7 @@ public class ViewController {
     public String afficherMesReservations(Model model, Authentication authentication) {
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
         List<LivreBean> livresAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList = rechercherLivres.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurBean.getId());
+
         model.addAttribute("livresAvecUnSeulExemplaire", livresAvecUnSeulExemplaireQuiALaDateDeRetourLaPlusProcheList);
         model.addAttribute("utilisateurId", ((UtilisateurBean) authentication.getPrincipal()).getId());
         return "liste-de-mes-reservations";

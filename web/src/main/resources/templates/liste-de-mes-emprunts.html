@@ -37,9 +37,10 @@
                             <li class="list-group-item">Date de retour : <p th:text="${exemplaire.dateRetour}"/></li>
                             <li class="list-group-item">La date d'emprunt est prolongée : <p
                                     th:text="${exemplaire.prolongerEmprunt}"/></li>
-                            <li class="list-group-item">Prolongation ? : <a th:if="${!exemplaire.isProlongerEmprunt()} and ${exemplaire.empruntEstPossible}"
-                                                                            th:href="@{/prolonger-emprunt/{id}(id=${exemplaire.id})}"
-                                                                            class="btn btn-success">Prolonger
+                            <li class="list-group-item">Prolongation ? : <a
+                                    th:if="${!exemplaire.isProlongerEmprunt() and exemplaire.dateRetour>dateDuJour}"
+                                    th:href="@{/prolonger-emprunt/{id}(id=${exemplaire.id})}"
+                                    class="btn btn-success">Prolonger
                                 l'emprunt</a></li>
 
                         </th:text>

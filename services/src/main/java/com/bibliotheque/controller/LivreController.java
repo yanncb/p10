@@ -7,6 +7,7 @@ import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -93,9 +94,9 @@ public class LivreController {
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------
 
-    @PostMapping(value = "creer-emprunt/{exemplaireId}/{utilisateurId}")
-    public Exemplaire creerEmprunt(@PathVariable("exemplaireId") Integer exemplaireId, @PathVariable ("utilisateurId") Integer utilisateurId) {
-        Exemplaire exemplaire = livreService.creerEmprunt(exemplaireId, utilisateurId);
+    @PostMapping(value = "creer-emprunt/{exemplaireId}/{livreId}/{utilisateurId}")
+    public Exemplaire creerEmprunt(@PathVariable("exemplaireId") Integer exemplaireId, @PathVariable("livreId")Integer livreId, @PathVariable ("utilisateurId") Integer utilisateurId) {
+        Exemplaire exemplaire = livreService.creerEmprunt(exemplaireId,livreId, utilisateurId);
         return exemplaire;
     }
 

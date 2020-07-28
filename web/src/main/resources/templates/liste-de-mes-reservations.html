@@ -25,19 +25,22 @@
             </thead>
 
             <tbody>
-            <tr>
-                <th:text th:each="livre : ${livresAvecUnSeulExemplaire}">
+
+            <th:text th:each="livre : ${livresAvecUnSeulExemplaire}">
+
+                <tr>
 
                     <td th:text="${livre.titre}"></td>
                     <td th:text="${livre.auteur}"></td>
 
                     <th:text th:each="exemplaire : ${livre.exemplaireList}">
 
-                        <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant
-                            nous attendons les retardataires...
+                        <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant nous
+                            attendons les retardataires...
                         </td>
 
-                        <td th:text="${exemplaire.getProchaineDispo()}"></td>
+                        <td th:if="${exemplaire.getProchaineDispo() != null }"
+                            th:text="${exemplaire.getProchaineDispo()}"></td>
 
                     </th:text>
                     <td th:text="${livre.getPositionFile()}"></td>
@@ -46,9 +49,10 @@
                         <a th:href="@{/annuler-reservation/{livreId}/{utilisateurId}(livreId=${livre.id},utilisateurId=${utilisateurId})}"
                            class="btn btn-success">Annuler</a>
                     </td>
-                </th:text>
 
-            </tr>
+                </tr>
+            </th:text>
+
             </tbody>
 
         </table>

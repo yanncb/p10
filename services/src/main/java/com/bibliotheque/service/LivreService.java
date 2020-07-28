@@ -52,7 +52,7 @@ public interface LivreService {
      * @param utilisateurId utilisateur id pour identifier l'utilisateur emprunteur
      * @return exemplaire.
      */
-    Exemplaire creerEmprunt(int exemplaireId, int utilisateurId);
+    Exemplaire creerEmprunt(int exemplaireId, int livreId, int utilisateurId);
 
     /**
      * retour d'un pret

@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-emprunts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServicesApplication">
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration name="BatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.BatchApplication" />
@@ -105,7 +107,7 @@
       <workItem from="1593519142872" duration="1696000" />
       <workItem from="1593523612177" duration="19477000" />
       <workItem from="1594643085604" duration="66298000" />
-      <workItem from="1595508153802" duration="23730000" />
+      <workItem from="1595508153802" duration="27860000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -205,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595606952990</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="debug ihm">
+      <created>1595944444051</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1595944444051</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,18 +257,10 @@
     <MESSAGE value="finalisation algo pour la reservation et le retour de la date la plus proche." />
     <MESSAGE value="bouton annuler reservation fonctionnel a 100% !!" />
     <MESSAGE value="finalisation de la methode permettant de savoir notre classement dans la file d'attente." />
-    <option name="LAST_COMMIT_MESSAGE" value="finalisation de la methode permettant de savoir notre classement dans la file d'attente." />
+    <MESSAGE value="debug ihm" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug ihm" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="ex" />

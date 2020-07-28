@@ -170,7 +170,9 @@ public class LivreServiceImpl implements LivreService {
         reservation.setUtilisateur(utilisateur);
         reservation.setLivre(livre);
         Reservation reservationDejaPresente = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
-        if (reservationDejaPresente == null) {
+        int nbReservation = livre.getReservationList().size();
+        int nbExemplaireMax = livre.getExemplaireList().size();
+        if ((reservationDejaPresente == null) && (nbReservation <= nbExemplaireMax* 2)) {
             reservationRepository.save(reservation);
         }
         return livre;
@@ -197,12 +199,19 @@ public class LivreServiceImpl implements LivreService {
     //TODO A TESTER en MOCK
 
     @Override
-    public Exemplaire creerEmprunt(int exemplaireId, int utilisateurId) {
+    public Exemplaire creerEmprunt(int exemplaireId, int livreId, int utilisateurId) {
+        Reservation reservationDejaPresente = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
+        if (reservationDejaPresente != null) {
+            reservationRepository.delete(reservationDejaPresente);
+        }
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
         exemplaire.setPret(true);
         Utilisateur utilisateur = utilisateurRepository.findById(utilisateurId);
         exemplaire.setUtilisateur(utilisateur);
         exemplaire.setDateDemprunt(LocalDate.now());
+
+
+
         exemplaireRepository.save(exemplaire);
         return exemplaire;
     }

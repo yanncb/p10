@@ -31,13 +31,10 @@
                     retardataires...
                 </td>
             </th:text>
-                <!--        //TODO ajouter nombre de personnes ayant reservé-->
                 <td th:if="${nbReservation == 0}">Aucune réservation en cours</td>
                 <td th:if="${nbReservation != 0}" th:text="${nbReservation}"></td>
-            th:if="${evaluation lt 49 and evaluation gt 29}"
             <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{livreId}/{utilisateurId}(livreId=${livre.id},utilisateurId=${utilisateur.id})}" class="btn btn-success">Réserver le prochain livre disponible</a>
             </td>
-                <!--TODO ajout condition que l'utilisateur qui reserve n'ai pas deja une reservation sur le meme ouvrage en cours-->
         </tr>
         </tbody>
     </table>

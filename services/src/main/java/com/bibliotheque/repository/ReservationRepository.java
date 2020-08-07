@@ -18,4 +18,7 @@ public interface ReservationRepository extends JpaRepository<Reservation, Intege
 
     @Query("select r from Reservation r where r.livre.id = :livreId")
     Reservation findByLivreId(int livreId);
+
+    @Query("select all from Reservation r where r.dateEnvoieMail is not null ")
+    List<Reservation> findAllReservationwithDateDenvoie();
 }

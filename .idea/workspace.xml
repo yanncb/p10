@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/proxy/ProxyBackToBatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,7 +118,7 @@
       <workItem from="1594643085604" duration="66298000" />
       <workItem from="1595508153802" duration="45714000" />
       <workItem from="1596558431632" duration="10843000" />
-      <workItem from="1596725589302" duration="9697000" />
+      <workItem from="1596725589302" duration="15085000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -233,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596802608513</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="methode pour saisir la date de retour d'un exemplaire fonctionnel, et envoie de mail au premier de la liste lors du retour d'un exemplaire ok !">
+      <created>1596806730120</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1596806730120</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,14 +292,15 @@
     <MESSAGE value="debug ihm" />
     <MESSAGE value="debug ihm, et ajout méthode de vérification si resa = 2x max le nb d'exemplaire dispo. &#10;&#10;quand l'usager emprunte un livre qu'il a deja reserver il est supprimer de la reservation." />
     <MESSAGE value="Version pour debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version pour debug" />
+    <MESSAGE value="methode pour saisir la date de retour d'un exemplaire fonctionnel, et envoie de mail au premier de la liste lors du retour d'un exemplaire ok !" />
+    <option name="LAST_COMMIT_MESSAGE" value="methode pour saisir la date de retour d'un exemplaire fonctionnel, et envoie de mail au premier de la liste lors du retour d'un exemplaire ok !" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>240</line>
+          <line>241</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

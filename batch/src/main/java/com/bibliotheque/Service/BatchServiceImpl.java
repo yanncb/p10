@@ -3,6 +3,7 @@ package com.bibliotheque.Service;
 
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
+import com.bibliotheque.models.Reservation;
 import com.bibliotheque.models.Utilisateur;
 import com.bibliotheque.proxies.ProxyBatchToBack;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,13 @@ public class BatchServiceImpl implements BatchService {
     public List<Livre> listeDeLivreDontLesExemplairesSontEnRetard() {
         List<Livre> livresEnRetard = proxyBatchToBack.listeDeLivreDontLesExemplairesSontEnRetard();
         return livresEnRetard;
+    }
+
+    @Override
+    public List<Reservation>listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h() {
+        List<Reservation> reservationDispoDepuisPlusDe48h = proxyBatchToBack.listeDeReservationDontLesDatesDeRetourSontSuperieurA48h();
+
+        return null;
     }
 
 
@@ -62,14 +70,7 @@ public class BatchServiceImpl implements BatchService {
 
     }
 
-    @Override
-    public String envoieDeNotificationParMailALutilisateurAyantReserveUnLivreEtCeTrouvantPremierDeLaListe(Utilisateur utilisateur) {
 
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(utilisateur.getMail());
-
-        return null;
-    }
 
 
 }

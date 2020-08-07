@@ -17,16 +17,11 @@ public interface BatchService {
      */
     List<Livre> listeDeLivreDontLesExemplairesSontEnRetard();
 
-//    je veux supprimer une reservation d'un' utilisateur ayant reservé un livre des qu'il peut recuperer un exemplaire en bibli depuis plus de 48h'
-
     /**
-     * Demande la liste de reservation dont un exemplaire est dispo, si une reservation est disponible depuis deux jours on supprime la reservation pour le premier utilisateur
-     * il faut voir si dans la liste de resa un exemplaire d'un livre reservé est dispo
-     * @param utilisateurId
-     * @param livreId
-     * @return
+     * demande au back la liste de reservation ayant une date de retour en base ce qui signifie qu'une reservation est en cours.
+     * @return liste de reservation
      */
-    List<Reservation>supprimerReservationQuandLivreDispoDepuisPlusDe48H(int utilisateurId,int livreId);
+    List<Reservation>listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h();
 
 
     /**
@@ -41,12 +36,6 @@ public interface BatchService {
      */
     String sendMaill();
 
-    /**
-     * Méthode d'envoie de mail
-     * @param utilisateur l'utilisateur etant le premier de la liste d'attente
-     * @return rien
-     */
-    String envoieDeNotificationParMailALutilisateurAyantReserveUnLivreEtCeTrouvantPremierDeLaListe(Utilisateur utilisateur);
 
 
 }

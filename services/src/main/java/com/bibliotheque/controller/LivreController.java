@@ -3,6 +3,7 @@ package com.bibliotheque.controller;
 import com.bibliotheque.exception.LivreNotFoundexception;
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
+import com.bibliotheque.models.Reservation;
 import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,8 @@ public class LivreController {
         List<Livre> livreList = livreService.trouverLesLivresDontLesExemplairesSontEnRetard();
         return livreList;
     }
+
+
 
     @GetMapping(value = "/livre/{livreId}")
     public Livre recupererUnLivreParId(@PathVariable int livreId) {

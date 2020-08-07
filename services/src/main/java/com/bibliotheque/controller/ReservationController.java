@@ -19,4 +19,12 @@ public class ReservationController {
         List<Reservation> reservationList = reservationService.trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
         return reservationList;
     }
+
+    @GetMapping(value = "/liste-a-supprimer-plus-48h")
+    public void listeDeReservationASupprimer(List<Reservation> reservationList){
+        reservationService.supprimerListeDeReservation(reservationList);
+
+    }
+
+
 }

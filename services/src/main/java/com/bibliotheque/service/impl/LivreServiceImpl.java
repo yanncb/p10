@@ -75,12 +75,20 @@ public class LivreServiceImpl implements LivreService {
         return livres;
     }
 
-//    // Je veux pouvoir comparer les livres qui sont reserver par des utilisateurs et les exemplaires qui sont disponible.
-//    public List<Livre> ListeDesLivreReserve{
-//
-//        List<Livre> listeDeLivreReserve = livreRepository.trouverLesLivresReserves();
-//
-//    }
+    public int premierUtilisateurIdDansLaFileDattente(int livreId) {
+        Livre livreReserve = livreRepository.findById(livreId);
+        List<Reservation> listeDattenteDesReservations = reservationRepository.findByLivreOrderById(livreReserve);
+        int positionDansLaListeDattente = 1;
+        Utilisateur utilisateurAPrevenirParMail = new Utilisateur();
+
+        for (Reservation reservation : listeDattenteDesReservations) {
+            if (positionDansLaListeDattente == 1) {
+                utilisateurAPrevenirParMail.setId(reservation.getUtilisateur().getId());
+                positionDansLaListeDattente++;
+            }
+        }
+        return utilisateurAPrevenirParMail.getId();
+    }
 
 
     public List<Livre> rechercherTousLesLivresReserveParUtilisateur(int utilisateurId) {
@@ -134,7 +142,6 @@ public class LivreServiceImpl implements LivreService {
 
         return livreARendre;
     }
-
 
 
     @Override
@@ -234,13 +241,13 @@ public class LivreServiceImpl implements LivreService {
     public Exemplaire retourEmprunt(int exemplaireId) {
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
         Livre livreParIdExemplaire = livreRepository.findByExemplaireList(exemplaire);
-        Utilisateur utilisateur = exemplaire.getUtilisateur();
+        Utilisateur utilisateurPremierDeLaFileDattente = utilisateurRepository.findById(premierUtilisateurIdDansLaFileDattente(livreParIdExemplaire.getId()));
         Reservation reservation = reservationRepository.findByLivreId(livreParIdExemplaire.getId());
 
         if (reservation != null) {
             //TODO envoie mail au premier de la liste
             reservation.setDateEnvoieMail(LocalDate.now());
-            envoieDeMailPourPremierDeLaListeDattente(utilisateur, livreParIdExemplaire);
+            envoieDeMailPourPremierDeLaListeDattente(utilisateurPremierDeLaFileDattente, livreParIdExemplaire);
         }
 
         exemplaire.setPret(false);

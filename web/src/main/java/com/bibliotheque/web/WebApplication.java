@@ -10,12 +10,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients("com.bibliotheque.web")
 public class WebApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebApplication.class, args);
-	}
-	
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(WebApplication.class);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WebApplication.class, args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(WebApplication.class);
+    }
 }

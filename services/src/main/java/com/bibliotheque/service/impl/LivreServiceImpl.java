@@ -11,6 +11,7 @@ import com.bibliotheque.repository.UtilisateurRepository;
 import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import proxy.ProxyBackToBatch;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -35,6 +36,9 @@ public class LivreServiceImpl implements LivreService {
 
     @Autowired
     ReservationRepository reservationRepository;
+
+    @Autowired
+    ProxyBackToBatch proxyBackToBatch;
 
     @Override
     public List<Livre> rechercherTousLesLivres() {
@@ -70,6 +74,14 @@ public class LivreServiceImpl implements LivreService {
         }
         return livres;
     }
+
+//    // Je veux pouvoir comparer les livres qui sont reserver par des utilisateurs et les exemplaires qui sont disponible.
+//    public List<Livre> ListeDesLivreReserve{
+//
+//        List<Livre> listeDeLivreReserve = livreRepository.trouverLesLivresReserves();
+//
+//    }
+
 
     public List<Livre> rechercherTousLesLivresReserveParUtilisateur(int utilisateurId) {
         List<Livre> livreReserveList = livreRepository.rechercherTousLesLivresReserveParUtilisateur(utilisateurId);
@@ -221,11 +233,24 @@ public class LivreServiceImpl implements LivreService {
     @Override
     public Exemplaire retourEmprunt(int exemplaireId) {
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
+        Livre livreParIdExemplaire = livreRepository.findByExemplaireList(exemplaire);
+        Utilisateur utilisateur  = exemplaire.getUtilisateur();
+        Reservation reservation= reservationRepository.findByLivreId(livreParIdExemplaire.getId());
+
+        if (reservation != null){
+            //TODO envoie mail au premier de la liste
+            reservation.setDateEnvoieMail(LocalDate.now());
+//            ProxyBackToBatch proxyBackToBatch = null;  <=========
+//            proxyBackToBatch.envoieDeMailAUtilisateurAyantReserveLivreEtEtantPremierDeLaListeDattente(utilisateur.getId());
+
+        }
+
         exemplaire.setPret(false);
         exemplaire.setUtilisateur(null);
         exemplaire.setDateDemprunt(null);
         exemplaire.setProlongerEmprunt(false);
         exemplaireRepository.save(exemplaire);
+
         return exemplaire;
     }
 

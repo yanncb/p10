@@ -103,6 +103,7 @@ public class LivreController {
     @GetMapping(value = "retour-emprunt/{exemplaireId}")
     public Exemplaire retourEmprunt(@PathVariable("exemplaireId") Integer exemplaireId) {
         Exemplaire exemplaire = livreService.retourEmprunt(exemplaireId);
+        //TODO ajouter envoie de mail si reservation au premier de la file + ajouter date d'envoie de mail en base.?
         return exemplaire;
     }
 

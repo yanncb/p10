@@ -2,12 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/src/main/java/proxy/ProxyBackToBatch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Exemplaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Exemplaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Livre.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Livre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/ServicesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/ServicesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/WebApplication.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +56,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
@@ -55,6 +69,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bibliotheque.models" />
+      <recent name="com.bibliotheque.step" />
       <recent name="com.bibliotheque.web.beans" />
     </key>
   </component>
@@ -70,7 +86,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="Spring Boot.ServicesApplication">
     <configuration name="BatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.BatchApplication" />
@@ -107,7 +123,9 @@
       <workItem from="1593519142872" duration="1696000" />
       <workItem from="1593523612177" duration="19477000" />
       <workItem from="1594643085604" duration="66298000" />
-      <workItem from="1595508153802" duration="27860000" />
+      <workItem from="1595508153802" duration="45714000" />
+      <workItem from="1596558431632" duration="10843000" />
+      <workItem from="1596725589302" duration="6161000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -214,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595944444051</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="debug ihm, et ajout méthode de vérification si resa = 2x max le nb d'exemplaire dispo. &#10;&#10;quand l'usager emprunte un livre qu'il a deja reserver il est supprimer de la reservation.">
+      <created>1595949906618</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1595949906618</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,9 +283,19 @@
     <MESSAGE value="bouton annuler reservation fonctionnel a 100% !!" />
     <MESSAGE value="finalisation de la methode permettant de savoir notre classement dans la file d'attente." />
     <MESSAGE value="debug ihm" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug ihm" />
+    <MESSAGE value="debug ihm, et ajout méthode de vérification si resa = 2x max le nb d'exemplaire dispo. &#10;&#10;quand l'usager emprunte un livre qu'il a deja reserver il est supprimer de la reservation." />
+    <option name="LAST_COMMIT_MESSAGE" value="debug ihm, et ajout méthode de vérification si resa = 2x max le nb d'exemplaire dispo. &#10;&#10;quand l'usager emprunte un livre qu'il a deja reserver il est supprimer de la reservation." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
+          <line>241</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="ex" />

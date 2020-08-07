@@ -3,8 +3,10 @@ package com.bibliotheque.Service;
 
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
+import com.bibliotheque.models.Reservation;
 import com.bibliotheque.models.Utilisateur;
 import com.bibliotheque.proxies.ProxyBatchToBack;
+import jdk.jshell.execution.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -31,6 +33,7 @@ public class BatchServiceImpl implements BatchService {
         return livresEnRetard;
     }
 
+
     public List<Utilisateur> listUtilisateurEnRetard() {
         List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
         List<Utilisateur> utilisateursEnRetard = new ArrayList<>();
@@ -41,21 +44,6 @@ public class BatchServiceImpl implements BatchService {
         }
         return utilisateursEnRetard;
     }
-
-//    public List<Exemplaire> listExemplairesEnRetard() {
-//        List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
-//        List<Exemplaire> ExemplairesEnRetard = new ArrayList<>();
-//        for (Livre livre : livres) {
-//            for (Exemplaire exemplaire : livre.getExemplaireList()) {
-//                ExemplairesEnRetard.add(exemplaire);
-//            }
-//        }
-//        return ExemplairesEnRetard;
-//    }
-
-
-    // creation sendmail dans service liste resa enretard et mail a tous els retardataire
-
 
     @ResponseBody
     @RequestMapping("/sendSimpleEmail")
@@ -75,4 +63,23 @@ public class BatchServiceImpl implements BatchService {
         return "Email Sent!";
 
     }
+
+    @Override
+    public String envoieDeNotificationParMailALutilisateurAyantReserveUnLivreEtCeTrouvantPremierDeLaListe(Utilisateur utilisateur) {
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(utilisateur.getMail());
+
+        return null;
+    }
+
+
 }
+//
+//"quand un exemplaire revient j'informe lors de la saisie du retour le premiere la liste de reservation et je set une date.
+//            lors du batch je recherche les reservations dont la date d'envoie de mail sont superieur à 48h et je les supprime.
+//            Je vérifie si un nouveau 1er de la liste existe et je lui envoie un mail."
+//Si tu es premier de la liste et que tu annule ta resa il faut informer tout de suite le nouveau premier ancien second.
+//
+//
+//si le premier de la liste à deja une date c'est pas un nouveau.

@@ -39,4 +39,6 @@ public class BatchConfig {
 
     @Bean
     public Step stepOne(){return stepBuilderFactory.get("stepOne").tasklet(membreEnRetardTasklet).build();}
+
+
 }

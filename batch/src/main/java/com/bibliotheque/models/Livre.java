@@ -8,7 +8,28 @@ public class Livre {
     private String titre;
     private String auteur;
 
+    private int positionFile;
+
     private List<Exemplaire> exemplaireList;
+
+    private List<Reservation> reservationList;
+
+    public List<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(List<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
+
+
+    public int getPositionFile() {
+        return positionFile;
+    }
+
+    public void setPositionFile(int positionFile) {
+        this.positionFile = positionFile;
+    }
 
     public List<Exemplaire> getExemplaireList() {
         return exemplaireList;
@@ -41,7 +62,6 @@ public class Livre {
     public void setAuteur(String auteur) {
         this.auteur = auteur;
     }
-
 
 
     @Override

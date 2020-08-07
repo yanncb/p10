@@ -14,6 +14,19 @@ public class Exemplaire {
 
     private Utilisateur utilisateur;
     private Livre livre;
+    private LocalDate dateRetour;
+
+    private LocalDate prochaineDispo;
+
+    private int positionFile;
+
+    public LocalDate getProchaineDispo() {
+        return prochaineDispo;
+    }
+
+    public void setProchaineDispo(LocalDate prochaineDispo) {
+        this.prochaineDispo = prochaineDispo;
+    }
 
     public Livre getLivre() {
         return livre;
@@ -23,7 +36,6 @@ public class Exemplaire {
         this.livre = livre;
     }
 
-    private LocalDate dateRetour;
 
     public Utilisateur getUtilisateur() {
         return utilisateur;
@@ -80,6 +92,7 @@ public class Exemplaire {
                 ", pret=" + pret +
                 ", dateDemprunt=" + dateDemprunt +
                 ", prolongerEmprunt=" + prolongerEmprunt +
+                ", positionFile=" + positionFile +
                 '}';
     }
 }

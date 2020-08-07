@@ -10,8 +10,9 @@ import com.bibliotheque.repository.ReservationRepository;
 import com.bibliotheque.repository.UtilisateurRepository;
 import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import proxy.ProxyBackToBatch;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class LivreServiceImpl implements LivreService {
     public static final int PERIODE_PROLONGEE_DE_PRET = 60;
     private static final int PERIODE_INITIALE_DE_PRET = 30;
 
+    @Autowired
+    public JavaMailSender emailSender;
 
     @Autowired
     LivreRepository livreRepository;
@@ -36,9 +39,6 @@ public class LivreServiceImpl implements LivreService {
 
     @Autowired
     ReservationRepository reservationRepository;
-
-    @Autowired
-    ProxyBackToBatch proxyBackToBatch;
 
     @Override
     public List<Livre> rechercherTousLesLivres() {
@@ -184,7 +184,7 @@ public class LivreServiceImpl implements LivreService {
         Reservation reservationDejaPresente = reservationRepository.findBylivreIdAndUtilisateurId(livreId, utilisateurId);
         int nbReservation = livre.getReservationList().size();
         int nbExemplaireMax = livre.getExemplaireList().size();
-        if ((reservationDejaPresente == null) && (nbReservation <= nbExemplaireMax* 2)) {
+        if ((reservationDejaPresente == null) && (nbReservation <= nbExemplaireMax * 2)) {
             reservationRepository.save(reservation);
         }
         return livre;
@@ -223,7 +223,6 @@ public class LivreServiceImpl implements LivreService {
         exemplaire.setDateDemprunt(LocalDate.now());
 
 
-
         exemplaireRepository.save(exemplaire);
         return exemplaire;
     }
@@ -234,15 +233,13 @@ public class LivreServiceImpl implements LivreService {
     public Exemplaire retourEmprunt(int exemplaireId) {
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
         Livre livreParIdExemplaire = livreRepository.findByExemplaireList(exemplaire);
-        Utilisateur utilisateur  = exemplaire.getUtilisateur();
-        Reservation reservation= reservationRepository.findByLivreId(livreParIdExemplaire.getId());
+        Utilisateur utilisateur = exemplaire.getUtilisateur();
+        Reservation reservation = reservationRepository.findByLivreId(livreParIdExemplaire.getId());
 
-        if (reservation != null){
+        if (reservation != null) {
             //TODO envoie mail au premier de la liste
             reservation.setDateEnvoieMail(LocalDate.now());
-//            ProxyBackToBatch proxyBackToBatch = null;  <=========
-//            proxyBackToBatch.envoieDeMailAUtilisateurAyantReserveLivreEtEtantPremierDeLaListeDattente(utilisateur.getId());
-
+            envoieDeMailPourPremierDeLaListeDattente(utilisateur, livreParIdExemplaire);
         }
 
         exemplaire.setPret(false);
@@ -252,6 +249,20 @@ public class LivreServiceImpl implements LivreService {
         exemplaireRepository.save(exemplaire);
 
         return exemplaire;
+    }
+
+    public String envoieDeMailPourPremierDeLaListeDattente(Utilisateur utilisateur, Livre livre) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(utilisateur.getMail());
+
+        message.setSubject("Bonjour, c'est votre bibliotheque vous pouvez venir recuperer l'exemplaire " + livre.getTitre() + "que vous avez reservé");
+        message.setText("Vous avez 48h pour venir recuperé votre exemplaire du " + livre.getTitre() + " passé ce delais nous ne pourrons pas vous garantir qu'il sera encore disponible.");
+
+        emailSender.send(message);
+
+        return "Email Sent!";
+
+
     }
 
 }

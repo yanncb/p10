@@ -3,10 +3,8 @@ package com.bibliotheque.Service;
 
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
-import com.bibliotheque.models.Reservation;
 import com.bibliotheque.models.Utilisateur;
 import com.bibliotheque.proxies.ProxyBatchToBack;
-import jdk.jshell.execution.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;

@@ -38,7 +38,7 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public String supprimerListeDeReservation(List<Reservation> reservationList) {
-        for (Reservation reservation:reservationList) {
+        for (Reservation reservation : reservationList) {
             reservationRepository.delete(reservation);
             Utilisateur utilisateur = utilisateurRepository.findById(premierUtilisateurIdDansLaFileDattente(reservation.getId()));
             Livre livre = livreRepository.findByReservationId(reservation.getId());

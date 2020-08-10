@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente .">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -112,7 +109,8 @@
       <workItem from="1594643085604" duration="66298000" />
       <workItem from="1595508153802" duration="45714000" />
       <workItem from="1596558431632" duration="10843000" />
-      <workItem from="1596725589302" duration="18702000" />
+      <workItem from="1596725589302" duration="19694000" />
+      <workItem from="1597062006668" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -247,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596812228618</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente .">
+      <created>1596815869044</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1596815869044</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +300,8 @@
     <MESSAGE value="Version pour debug" />
     <MESSAGE value="methode pour saisir la date de retour d'un exemplaire fonctionnel, et envoie de mail au premier de la liste lors du retour d'un exemplaire ok !" />
     <MESSAGE value="creation du steptwo dans le batch pour faire le traitement automatique des reservations ayant depassé les 48h, et renvoie vers le back reste le traitement dans le back pour la suppression ." />
-    <option name="LAST_COMMIT_MESSAGE" value="creation du steptwo dans le batch pour faire le traitement automatique des reservations ayant depassé les 48h, et renvoie vers le back reste le traitement dans le back pour la suppression ." />
+    <MESSAGE value="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente ." />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente ." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

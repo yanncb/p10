@@ -8,9 +8,10 @@ public interface ReservationService {
 
     /**
      * Recupere la liste de reservation ayant une date d'envoie de mail ce qui veut dire qu'une reservation est en cours.
+     *
      * @return liste de reservation
      */
-    List<Reservation>trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
+    List<Reservation> trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
 
     String supprimerListeDeReservation(List<Reservation> reservationList);
 }

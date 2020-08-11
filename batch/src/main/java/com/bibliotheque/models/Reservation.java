@@ -8,11 +8,12 @@ public class Reservation {
 
     private int id;
 
+    private LocalDate dateEnvoieMail;
+
     private Utilisateur utilisateur;
 
     private Livre livre;
 
-    private LocalDate dateEnvoieMail;
 
     public int getId() {
         return id;
@@ -38,6 +39,7 @@ public class Reservation {
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
     }
+
 
 }
 

@@ -22,14 +22,7 @@ public class Utilisateur {
 
 
     private List<Livre> livresList;
-
-    public List<Livre> getLivresList() {
-        return livresList;
-    }
-
-    public void setLivresList(List<Livre> livresList) {
-        this.livresList = livresList;
-    }
+    
 
     public int getId() {
         return id;
@@ -97,16 +90,15 @@ public class Utilisateur {
 
     @Override
     public String toString() {
-        return "UtilisateurBean{" +
+        return "Utilisateur{" +
                 "id=" + id +
-                ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
+                ", nom='" + nom + '\'' +
+                ", motDePasse='" + motDePasse + '\'' +
                 ", adresse='" + adresse + '\'' +
                 ", numeroDeTelephone='" + numeroDeTelephone + '\'' +
                 ", mail='" + mail + '\'' +
-                ", motDePasse='" + motDePasse + '\'' +
                 ", numCarte=" + numCarte +
                 '}';
     }
-
 }

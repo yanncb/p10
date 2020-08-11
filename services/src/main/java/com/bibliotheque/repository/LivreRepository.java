@@ -31,7 +31,7 @@ public interface LivreRepository extends JpaRepository<Livre, Integer> {
 
     Livre findByExemplaireList(Exemplaire exemplaire);
 
-    @Query("select l from Livre l where l.reservationList.id = :reservationId")
+    @Query("select l from Livre l join fetch l.reservationList r where  r.id= :reservationId")
     Livre findByReservationId(@Param("reservationId") int reservationId);
 
 }

@@ -12,6 +12,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,8 +33,15 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public List<Reservation> trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h() {
-        List<Reservation> listeDeReservation = reservationRepository.findAllReservationwithDateDenvoie();
-        return listeDeReservation;
+        List<Reservation> listeDeReservation = reservationRepository.findAll();
+        List<Reservation> listeDeReservationAvecUneDateDenvoieDeMAil= new ArrayList<>();
+        for (Reservation reservation : listeDeReservation ) {
+            if (reservation.getDateEnvoieMail() != null){
+                listeDeReservationAvecUneDateDenvoieDeMAil.add(reservation);
+            }
+
+        }
+        return listeDeReservationAvecUneDateDenvoieDeMAil;
     }
 
     @Override

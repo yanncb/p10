@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente .">
+    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/BatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/batch/BatchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/models/Utilisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/ServicesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/ServicesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/services/ServicesApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/services/ServicesApplicationTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +29,7 @@
       <list>
         <option value="HTML File" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -43,7 +56,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projet-9" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -52,10 +67,22 @@
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.bibliotheque.service.impl" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bibliotheque.batch" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.bibliotheque.models" />
       <recent name="com.bibliotheque.step" />
       <recent name="com.bibliotheque.web.beans" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bibliotheque.configuration" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -70,10 +97,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="Spring Boot.BatchApplication">
     <configuration name="BatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.BatchApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.batch.BatchApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,7 +137,7 @@
       <workItem from="1595508153802" duration="45714000" />
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
-      <workItem from="1597062006668" duration="652000" />
+      <workItem from="1597062006668" duration="13821000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -252,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596815869044</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Dernier commit pour cloturé le ticket 1 RELEASE 0.0.3">
+      <created>1597063326944</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1597063326945</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +335,8 @@
     <MESSAGE value="methode pour saisir la date de retour d'un exemplaire fonctionnel, et envoie de mail au premier de la liste lors du retour d'un exemplaire ok !" />
     <MESSAGE value="creation du steptwo dans le batch pour faire le traitement automatique des reservations ayant depassé les 48h, et renvoie vers le back reste le traitement dans le back pour la suppression ." />
     <MESSAGE value="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente ." />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout methode pour envoie de mail, ajout methode pour calculer place de l'utilisateur dans la file d'attente, lors de la suppression des reservations de plus de 48h envoie de mail au nouveau premier de la liste d'attente ." />
+    <MESSAGE value="Dernier commit pour cloturé le ticket 1 RELEASE 0.0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dernier commit pour cloturé le ticket 1 RELEASE 0.0.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,6 +345,26 @@
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
           <line>248</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/MembreEnRetardTasklet.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

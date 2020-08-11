@@ -25,7 +25,6 @@ public class BatchConfig {
     public final SuppressionReseApres48hsansRecuperation suppressionReseApres48hsansRecuperation;
 
 
-
     @Autowired
     public BatchConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory, MembreEnRetardTasklet membreEnRetardTasklet, SuppressionReseApres48hsansRecuperation suppressionReseApres48hsansRecuperation) {
         this.jobBuilderFactory = jobBuilderFactory;

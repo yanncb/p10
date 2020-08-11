@@ -24,7 +24,6 @@ public class BatchConfig {
 
     public final SuppressionReseApres48hsansRecuperation suppressionReseApres48hsansRecuperation;
 
-
     @Autowired
     public BatchConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory, MembreEnRetardTasklet membreEnRetardTasklet, SuppressionReseApres48hsansRecuperation suppressionReseApres48hsansRecuperation) {
         this.jobBuilderFactory = jobBuilderFactory;
@@ -34,7 +33,7 @@ public class BatchConfig {
     }
 
     @Bean
-    public Job sendReminderJob(){
+    public Job sendReminderJob() {
         return jobBuilderFactory.get("sendReminderJob")
                 .incrementer(new RunIdIncrementer())
                 .start(stepOne())
@@ -43,9 +42,13 @@ public class BatchConfig {
     }
 
     @Bean
-    public Step stepOne(){return stepBuilderFactory.get("stepOne").tasklet(membreEnRetardTasklet).build();}
+    public Step stepOne() {
+        return stepBuilderFactory.get("stepOne").tasklet(membreEnRetardTasklet).build();
+    }
 
     @Bean
-    public Step stepTwo(){return stepBuilderFactory.get("stepTwo").tasklet(suppressionReseApres48hsansRecuperation).build();}
+    public Step stepTwo() {
+        return stepBuilderFactory.get("stepTwo").tasklet(suppressionReseApres48hsansRecuperation).build();
+    }
 
 }

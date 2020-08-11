@@ -10,7 +10,6 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -25,28 +24,6 @@ public class BatchJob {
 
     @Autowired
     Job job;
-
-    @Bean
-    @Scheduled(cron = "${microservice.config.cron.job}")
-    protected Step customStep(StepBuilderFactory stepBuilders) {
-        return stepBuilders
-                .get("customStep")
-                .tasklet(new MembreEnRetardTasklet())
-                .tasklet(new SuppressionReseApres48hsansRecuperation())
-                .build();
-    }
-
-    @Bean
-    @Scheduled(cron = "${microservice.config.cron.job}")
-    public Job customJob(JobBuilderFactory jobBuilders, StepBuilderFactory stepBuilders) {
-        return jobBuilders
-                .get(String.valueOf(job))
-                .start(customStep(stepBuilders))
-                .build();
-    }
-
-
-
 
     /**
      * Programmation de la relance des emprunts à 3h00 du matin tous les jours

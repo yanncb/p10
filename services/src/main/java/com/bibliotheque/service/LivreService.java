@@ -101,6 +101,9 @@ public interface LivreService {
     List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(int utilisateurId);
 
     void annulerReservation(int livreId, int utilisateurId);
-}
+
+    int premierUtilisateurIdDansLaFileDattente(int livreId);
+
+    }
 
 

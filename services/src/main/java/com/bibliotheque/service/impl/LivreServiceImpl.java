@@ -78,16 +78,11 @@ public class LivreServiceImpl implements LivreService {
     public int premierUtilisateurIdDansLaFileDattente(int livreId) {
         Livre livreReserve = livreRepository.findById(livreId);
         List<Reservation> listeDattenteDesReservations = reservationRepository.findByLivreOrderById(livreReserve);
-        int positionDansLaListeDattente = 1;
-        Utilisateur utilisateurAPrevenirParMail = new Utilisateur();
-
-        for (Reservation reservation : listeDattenteDesReservations) {
-            if (positionDansLaListeDattente == 1) {
-                utilisateurAPrevenirParMail.setId(reservation.getUtilisateur().getId());
-                positionDansLaListeDattente++;
-            }
+        if (!listeDattenteDesReservations.isEmpty()) {
+            return listeDattenteDesReservations.get(0).getUtilisateur().getId();
+        } else {
+            return 0;
         }
-        return utilisateurAPrevenirParMail.getId();
     }
 
 

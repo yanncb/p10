@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="commit de debug">
+    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/batch/BatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/batch/BatchApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/MembreEnRetardTasklet.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/MembreEnRetardTasklet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,9 +71,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.bibliotheque.service.impl" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.bibliotheque.batch" />
     </key>
@@ -77,6 +78,9 @@
       <recent name="com.bibliotheque.models" />
       <recent name="com.bibliotheque.step" />
       <recent name="com.bibliotheque.web.beans" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bibliotheque.configuration" />
@@ -94,7 +98,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BatchApplication">
+  <component name="RunManager" selected="JUnit.LivreServiceImplTest.premierUtilisateurIdDansLaFileDattente">
+    <configuration name="LivreServiceImplTest.premierUtilisateurIdDansLaFileDattente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="services" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bibliotheque.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bibliotheque.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.service.impl.LivreServiceImplTest" />
+      <option name="METHOD_NAME" value="premierUtilisateurIdDansLaFileDattente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BatchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="batch" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bibliotheque.batch.BatchApplication" />
@@ -116,6 +136,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LivreServiceImplTest.premierUtilisateurIdDansLaFileDattente" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -134,7 +159,8 @@
       <workItem from="1595508153802" duration="45714000" />
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
-      <workItem from="1597062006668" duration="17695000" />
+      <workItem from="1597062006668" duration="20973000" />
+      <workItem from="1597324137332" duration="16273000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -290,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597153204480</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="commit de debug">
+      <created>1597156909690</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1597156909690</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -348,7 +381,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>248</line>
+          <line>243</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -363,28 +396,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
           <line>45</line>
-          <option name="timeStamp" value="30" />
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
           <line>50</line>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/batch/spring-batch-core/4.2.1.RELEASE/spring-batch-core-4.2.1.RELEASE-sources.jar!/org/springframework/batch/core/launch/support/CommandLineJobRunner.java</url>
+          <line>283</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchConfig.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.5.RELEASE/spring-boot-autoconfigure-2.2.5.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/batch/BatchAutoConfiguration.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.bibliotheque")
 @EnableFeignClients("com.bibliotheque")
 public class BatchApplication {
 

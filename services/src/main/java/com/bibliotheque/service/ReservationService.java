@@ -13,5 +13,5 @@ public interface ReservationService {
      */
     List<Reservation> trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
 
-    String supprimerListeDeReservation(List<Reservation> reservationList);
+    void supprimerListeDeReservation(List<Reservation> reservationList);
 }

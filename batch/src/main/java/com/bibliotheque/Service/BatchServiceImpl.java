@@ -36,7 +36,7 @@ public class BatchServiceImpl implements BatchService {
     public List<Reservation>listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h() {
         List<Reservation> reservationDispoDepuisPlusDe48h = proxyBatchToBack.listeDeReservationDontLesDatesDeRetourSontSuperieurA48h();
 
-        return null;
+        return reservationDispoDepuisPlusDe48h;
     }
 
 

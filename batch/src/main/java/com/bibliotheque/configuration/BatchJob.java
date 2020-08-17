@@ -25,6 +25,10 @@ public class BatchJob {
     @Autowired
     Job job;
 
+    public BatchJob() {
+        System.out.println("=>>>>>>>>>>>>>>>>>>>>>>>>>>> HEEELP");
+    }
+
     /**
      * Programmation de la relance des emprunts à 3h00 du matin tous les jours
      *

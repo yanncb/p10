@@ -75,14 +75,14 @@ public class LivreServiceImpl implements LivreService {
         return livres;
     }
 
-    public int premierUtilisateurIdDansLaFileDattente(int livreId) {
+    public Utilisateur premierUtilisateurDansLaFileDattente(int livreId) {
         Livre livreReserve = livreRepository.findById(livreId);
         List<Reservation> listeDattenteDesReservations = reservationRepository.findByLivreOrderById(livreReserve);
-        if (!listeDattenteDesReservations.isEmpty()) {
-            return listeDattenteDesReservations.get(0).getUtilisateur().getId();
-        } else {
-            return 0;
+        if (listeDattenteDesReservations.isEmpty()) {
+            return null;
         }
+        return listeDattenteDesReservations.get(0).getUtilisateur();
+
     }
 
 
@@ -115,7 +115,6 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
-    //TODO A TESTER en MOCK
     public List<Livre> trouverLesLivresDontLesExemplairesSontEnRetard() {
         List<Livre> livresEmpruntes = livreRepository.rechercherLivreDontExemplaireEnRetard();
         List<Livre> livreARendre = new ArrayList<>();
@@ -153,7 +152,6 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
-    // TODO A VERIFIER
     public Livre rechercherDateRetourLaPlusproche(int livreId) {
 
         Livre livre = livreRepository.findById(livreId);
@@ -211,7 +209,6 @@ public class LivreServiceImpl implements LivreService {
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------
 
-    //TODO A TESTER en MOCK
 
     @Override
     public Exemplaire creerEmprunt(int exemplaireId, int livreId, int utilisateurId) {
@@ -234,22 +231,26 @@ public class LivreServiceImpl implements LivreService {
 
     @Override
     public Exemplaire retourEmprunt(int exemplaireId) {
+        // 1 - Retour de l'emprunt
         Exemplaire exemplaire = exemplaireRepository.findById(exemplaireId);
         Livre livreParIdExemplaire = livreRepository.findByExemplaireList(exemplaire);
-        Utilisateur utilisateurPremierDeLaFileDattente = utilisateurRepository.findById(premierUtilisateurIdDansLaFileDattente(livreParIdExemplaire.getId()));
-        Reservation reservation = reservationRepository.findByLivreId(livreParIdExemplaire.getId());
-
-        if (reservation != null) {
-            //TODO envoie mail au premier de la liste
-            reservation.setDateEnvoieMail(LocalDate.now());
-            envoieDeMailPourPremierDeLaListeDattente(utilisateurPremierDeLaFileDattente, livreParIdExemplaire);
-        }
-
         exemplaire.setPret(false);
         exemplaire.setUtilisateur(null);
         exemplaire.setDateDemprunt(null);
         exemplaire.setProlongerEmprunt(false);
         exemplaireRepository.save(exemplaire);
+
+        // 2 - Gestion de la fille d'attente des reservations avec envoi de mail
+        Utilisateur utilisateurPremierDeLaFileDattente = premierUtilisateurDansLaFileDattente(livreParIdExemplaire.getId());
+        if (utilisateurPremierDeLaFileDattente != null) {
+            Reservation reservation = reservationRepository.findBylivreIdAndUtilisateurId(livreParIdExemplaire.getId(), utilisateurPremierDeLaFileDattente.getId());
+
+            if (reservation != null) {
+                reservation.setDateEnvoieMail(LocalDate.now());
+                envoieDeMailPourPremierDeLaListeDattente(utilisateurPremierDeLaFileDattente, livreParIdExemplaire);
+                reservationRepository.save(reservation);
+            }
+        }
 
         return exemplaire;
     }

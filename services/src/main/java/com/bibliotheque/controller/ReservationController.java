@@ -16,7 +16,7 @@ public class ReservationController {
 
     @GetMapping(value = "/exemplaire-plus-de-deux-jours")
     public List<Reservation> listeDeReservationAyantUnExemplaireRevenuDepuisplusDe48h(){
-        List<Reservation> reservationList = reservationService.trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
+        List<Reservation> reservationList = reservationService.trouverlisteDeReservationAyantUneDateDenvoieDeMail();
         return reservationList;
     }
 

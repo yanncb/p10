@@ -3,14 +3,11 @@ package com.bibliotheque.controller;
 import com.bibliotheque.exception.LivreNotFoundexception;
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
-import com.bibliotheque.models.Reservation;
 import com.bibliotheque.service.LivreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,7 +15,6 @@ public class LivreController {
 
     @Autowired
     LivreService livreService;
-
 
 
     @GetMapping(value = "/livres")
@@ -31,11 +27,10 @@ public class LivreController {
     }
 
     @GetMapping(value = "/livres-en-retard")
-    public List<Livre> listeDeLivreEnRetard(){
+    public List<Livre> listeDeLivreEnRetard() {
         List<Livre> livreList = livreService.trouverLesLivresDontLesExemplairesSontEnRetard();
         return livreList;
     }
-
 
 
     @GetMapping(value = "/livre/{livreId}")
@@ -72,44 +67,40 @@ public class LivreController {
     }
 
     @GetMapping("/prochaineDispo/{livreId}")
-    public Livre dateProchaineDispo(@PathVariable("livreId") int livreId){
-       Livre livre = livreService.rechercherDateRetourLaPlusproche(livreId);
+    public Livre dateProchaineDispo(@PathVariable("livreId") int livreId) {
+        Livre livre = livreService.rechercherDateRetourLaPlusproche(livreId);
         return livre;
     }
 
     @PostMapping("/reserverLivre/{livreId}/{utilisateurId}")
-    public Livre reserverLivre(@PathVariable("livreId") int livreId, @PathVariable("utilisateurId") int utilisateurId){
-    Livre livre = livreService.reservationLivre(livreId, utilisateurId);
+    public Livre reserverLivre(@PathVariable("livreId") int livreId, @PathVariable("utilisateurId") int utilisateurId) {
+        Livre livre = livreService.reservationLivre(livreId, utilisateurId);
         return livre;
     }
 
     @GetMapping("/rechercherLivreReserveParUtilisateur/{utilisateurId}")
-    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId){
+    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId) {
         //TODO UN SEUL EXEMPLAIRE A FAIRE REMONTER !
-    List<Livre> listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche = livreService.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurId);
+        List<Livre> listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche = livreService.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurId);
         return listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche;
     }
 
     @PostMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")
-    public void annulerReservation(@PathVariable("livreId") Integer livreId, @PathVariable("utilisateurId") Integer utilisateurId){
+    public void annulerReservation(@PathVariable("livreId") Integer livreId, @PathVariable("utilisateurId") Integer utilisateurId) {
         livreService.annulerReservation(livreId, utilisateurId);
     }
 
     // -------------------------------------------- PARTIE RESERVE AU PERSONNEL -------------------------------------
 
     @PostMapping(value = "creer-emprunt/{exemplaireId}/{livreId}/{utilisateurId}")
-    public Exemplaire creerEmprunt(@PathVariable("exemplaireId") Integer exemplaireId, @PathVariable("livreId")Integer livreId, @PathVariable ("utilisateurId") Integer utilisateurId) {
-        Exemplaire exemplaire = livreService.creerEmprunt(exemplaireId,livreId, utilisateurId);
+    public Exemplaire creerEmprunt(@PathVariable("exemplaireId") Integer exemplaireId, @PathVariable("livreId") Integer livreId, @PathVariable("utilisateurId") Integer utilisateurId) {
+        Exemplaire exemplaire = livreService.creerEmprunt(exemplaireId, livreId, utilisateurId);
         return exemplaire;
     }
 
     @GetMapping(value = "retour-emprunt/{exemplaireId}")
     public Exemplaire retourEmprunt(@PathVariable("exemplaireId") Integer exemplaireId) {
         Exemplaire exemplaire = livreService.retourEmprunt(exemplaireId);
-        //TODO ajouter envoie de mail si reservation au premier de la file + ajouter date d'envoie de mail en base.?
         return exemplaire;
     }
-
-
-
 }

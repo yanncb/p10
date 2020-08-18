@@ -2,6 +2,7 @@ package com.bibliotheque.service;
 
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
+import com.bibliotheque.models.Utilisateur;
 
 import java.util.List;
 
@@ -102,7 +103,12 @@ public interface LivreService {
 
     void annulerReservation(int livreId, int utilisateurId);
 
-    int premierUtilisateurIdDansLaFileDattente(int livreId);
+    /**
+     * Retour le premier utilisateur dans la file d'attente pour le livre dont l'id est passé en paramètre.
+     * @param livreId
+     * @return Le premier utilisateur sur liste d'attente, ou null s'il n'y a pas de liste d'attente pour ce livre
+     */
+    Utilisateur premierUtilisateurDansLaFileDattente(int livreId);
 
     }
 

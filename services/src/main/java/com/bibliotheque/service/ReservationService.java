@@ -11,7 +11,7 @@ public interface ReservationService {
      *
      * @return liste de reservation
      */
-    List<Reservation> trouverlisteDeReservationAyantUnExemplaireRevenuDepuisplusDe48h();
+    List<Reservation> trouverlisteDeReservationAyantUneDateDenvoieDeMail();
 
     void supprimerListeDeReservation(List<Reservation> reservationList);
 }

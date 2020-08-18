@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="ajout de test plus refacto de methode et debugage.">
-      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/ReservationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/ReservationServiceImplTest.java" afterDir="false" />
+    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="241" />
+    <option name="myElementSize" value="271" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,7 +93,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in services (1)">
+  <component name="RunManager" selected="Spring Boot.BatchApplication">
     <configuration name="All in services (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="services" />
       <option name="PACKAGE_NAME" value="" />
@@ -205,7 +207,7 @@
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
       <workItem from="1597062006668" duration="20973000" />
-      <workItem from="1597324137332" duration="36099000" />
+      <workItem from="1597324137332" duration="38191000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -382,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597756130376</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="ajout de test plus refacto de methode et debugage.">
+      <created>1597756914158</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1597756914158</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

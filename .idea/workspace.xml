@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/ReservationServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/LivreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" afterDir="false" />
+    <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="ajout de test plus refacto de methode et debugage.">
+      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/ReservationServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/ReservationServiceImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,8 +91,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ReservationServiceImplTest.premierUtilisateurDansLaFileDattente">
-    <configuration name="All in services" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in services (1)">
+    <configuration name="All in services (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="services" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -109,18 +100,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LivreServiceImplTest.premierUtilisateurIdDansLaFileDattente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in services" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="services" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bibliotheque.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bibliotheque.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.service.impl.LivreServiceImplTest" />
-      <option name="METHOD_NAME" value="premierUtilisateurIdDansLaFileDattente" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in services (1)" />
         <item itemvalue="JUnit.ReservationServiceImplTest.premierUtilisateurDansLaFileDattente" />
         <item itemvalue="JUnit.ReservationServiceImplTest.trouverlisteDeReservationAyantUneDateDenvoieDeMail" />
         <item itemvalue="JUnit.LivreServiceImplTest.retourEmprunt" />
         <item itemvalue="JUnit.All in services" />
-        <item itemvalue="JUnit.LivreServiceImplTest.premierUtilisateurIdDansLaFileDattente" />
       </list>
     </recent_temporary>
   </component>
@@ -222,7 +205,7 @@
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
       <workItem from="1597062006668" duration="20973000" />
-      <workItem from="1597324137332" duration="35469000" />
+      <workItem from="1597324137332" duration="36099000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -392,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597669718949</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ajout de test plus refacto de methode et debugage.">
+      <created>1597756130376</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1597756130376</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +434,8 @@
     <MESSAGE value="Dernier commit pour cloturé le ticket 1 RELEASE 0.0.3" />
     <MESSAGE value="commit de debug" />
     <MESSAGE value="ajout de test mocké et refacto" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de test mocké et refacto" />
+    <MESSAGE value="ajout de test plus refacto de methode et debugage." />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de test plus refacto de methode et debugage." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -509,5 +500,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/p10$All_in_services.ic" NAME="All in services Coverage Results" MODIFIED="1597753274000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/p10$All_in_services__1_.ic" NAME="All in services (1) Coverage Results" MODIFIED="1597756724720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

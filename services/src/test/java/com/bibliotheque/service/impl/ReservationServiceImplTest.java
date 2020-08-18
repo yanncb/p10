@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 class ReservationServiceImplTest {
+
     @Mock
     private ReservationRepository reservationRepositoryMock;
 
@@ -133,7 +134,4 @@ class ReservationServiceImplTest {
         assertEquals(utilisateur.getId(), 111);
     }
 
-    @Test
-    void envoieDeMailPourPremierDeLaListeDattente() {
-    }
 }

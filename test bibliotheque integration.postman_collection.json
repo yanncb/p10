@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "6257b8fd-d712-4940-9772-50dd7d546208",
+		"name": "test bibliotheque integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Livre controller",
+			"item": [
+				{
+					"name": "creer emprunt",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "adf5c70e-02ca-480d-abb6-41d7ea42e182",
+								"exec": [
+									"pm.test(\"Status test\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.ok;\r",
+									"        pm.response.to.be.json\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/creer-emprunt/7/6/5",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"creer-emprunt",
+								"7",
+								"6",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "creer reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49f4adeb-ad14-4d6f-8120-f279b0f9812f",
+								"exec": [
+									"pm.test(\"Status test\", function(){\r",
+									"    pm.response.to.have.status(200); \r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/reserverLivre/2/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"reserverLivre",
+								"2",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer emprunt",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6faa1f04-aef4-47e9-8e84-58e73778f833",
+								"exec": [
+									"pm.test(\"Status test\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/retour-emprunt/7",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"retour-emprunt",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "supprimer une reservation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "643f6228-17be-4daf-89cb-0912361a2e41",
+								"exec": [
+									"pm.test(\"Status test\", function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/annuler-reservation/2/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"annuler-reservation",
+								"2",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll livre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7cde8d3c-ff1e-463e-9373-bd46857638a3",
+								"exec": [
+									"pm.test(\"Find AllLivre is OK\", function () {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[5].id).to.eql(6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/livres",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"livres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "livres en retard",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7d9b590-3930-4c80-a754-f208cc3f2ed5",
+								"exec": [
+									"pm.test(\"Find AllLivre is OK\", function () {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/livres-en-retard",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"livres-en-retard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectionner un livre",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7361248a-8a24-42b8-9a35-5a7af28b25f8",
+								"exec": [
+									"pm.test(\"Selectionner un livre is OK\", function () {\r",
+									" pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.titre).to.eql(\"harry\");\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/livre/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"livre",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste de mes emprunts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f5cb6e8e-96aa-4418-8d81-9cee230088a0",
+								"exec": [
+									"pm.test(\"Liste de mes emprunts is OK\", function () {\r",
+									" pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/liste-de-mes-emprunts/2",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"liste-de-mes-emprunts",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste de mes reservations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eee275d2-d12a-4767-ad8c-5cf2ad0d1e3a",
+								"exec": [
+									"pm.test(\"Liste de mes reservations is OK\", function () {\r",
+									" pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/liste-de-mes-reservations/5",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"liste-de-mes-reservations",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prochaine dispo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3922ddf8-9844-4843-a9c1-9a9c3ac0e3af",
+								"exec": [
+									"pm.test(\"Liste de mes reservations is OK\", function () {\r",
+									"    pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/prochaineDispo/1",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"prochaineDispo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "livre reservé par utilisateur",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7a8ebc51-ed10-4774-8988-ecc17a904f4b",
+								"exec": [
+									"pm.test(\"Liste de mes reservations is OK\", function () {\r",
+									" pm.response.to.be.ok;\r",
+									"    pm.response.to.be.json\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:9000/liste-de-mes-reservations/5",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"liste-de-mes-reservations",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ReservationController",
+			"item": [
+				{
+					"name": "liste d'exemplaire avec une date d'envoie de mail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7239f2f7-e5da-4935-ad55-973286d68b61",
+								"exec": [
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/exemplaire-plus-de-deux-jours",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"exemplaire-plus-de-deux-jours"
+							]
+						},
+						"description": "Les exemplaires ayant une date d'envoie de mail signifie qu'un exemplaire est disponible en bibliotheque et qu'un utilisateur est dans la liste de reservation de l'exemplaire."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

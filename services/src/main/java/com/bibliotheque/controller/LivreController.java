@@ -72,17 +72,16 @@ public class LivreController {
         return livre;
     }
 
+    @GetMapping("/rechercherLivreReserveParUtilisateur/{utilisateurId}")
+    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId) {
+        List<Livre> listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche = livreService.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurId);
+        return listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche;
+    }
+
     @PostMapping("/reserverLivre/{livreId}/{utilisateurId}")
     public Livre reserverLivre(@PathVariable("livreId") int livreId, @PathVariable("utilisateurId") int utilisateurId) {
         Livre livre = livreService.reservationLivre(livreId, utilisateurId);
         return livre;
-    }
-
-    @GetMapping("/rechercherLivreReserveParUtilisateur/{utilisateurId}")
-    public List<Livre> rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(@PathVariable("utilisateurId") int utilisateurId) {
-        //TODO UN SEUL EXEMPLAIRE A FAIRE REMONTER !
-        List<Livre> listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche = livreService.rechercherTousLesLivresReserverParUtilisateurAvecProchainExemplaireDisponible(utilisateurId);
-        return listDeLivreAvecUnSeulExemplaireAyantDateLaPlusProche;
     }
 
     @PostMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")

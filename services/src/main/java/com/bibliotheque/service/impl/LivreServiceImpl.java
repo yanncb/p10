@@ -63,7 +63,6 @@ public class LivreServiceImpl implements LivreService {
         return livreList;
     }
 
-
     @Override
     public List<Livre> rechercherTousLesLivresPourUtilisateur(int id) {
         List<Livre> livres = livreRepository.rechercherTousLesLivresPourUtilisateur(id);
@@ -74,6 +73,7 @@ public class LivreServiceImpl implements LivreService {
         }
         return livres;
     }
+
 
     public Utilisateur premierUtilisateurDansLaFileDattente(int livreId) {
         Livre livreReserve = livreRepository.findById(livreId);

@@ -286,4 +286,70 @@ class LivreServiceImplTest {
 
     }
 
+    @Test
+    void rechercherTousLesLivres() {
+        List<Livre> livreList = new ArrayList<>();
+        List<Livre> livreList2 = new ArrayList<>();
+
+        Livre livre1 = new Livre();
+        Livre livre2 = new Livre();
+        Livre livre3 = new Livre();
+
+        livre1.setTitre("livre1 titre");
+        livre1.setId(111);
+
+        livre2.setTitre("livre2 titre");
+        livre2.setId(222);
+
+        livre3.setTitre("livre3 titre");
+        livre3.setId(333);
+
+        livreList.add(livre1);
+        livreList.add(livre2);
+        livreList.add(livre3);
+
+        Mockito.when(livreRepositoryMock.findAll()).thenReturn(livreList);
+
+        livreList2 = mockedLivreService.rechercherTousLesLivres();
+
+        assertEquals(livreList2.size(), 3);
+
+
+    }
+
+    @Test
+    void rechercherParAuteurOuTitre() {
+        List<Livre> livreList = new ArrayList<>();
+        List<Livre> livreList2 = new ArrayList<>();
+
+        Livre livre1 = new Livre();
+        Livre livre2 = new Livre();
+        Livre livre3 = new Livre();
+
+        livre1.setTitre("livre1 titre");
+        livre1.setId(111);
+        livre1.setTitre("toto");
+        livre1.setAuteur("jkr");
+
+        livre2.setTitre("livre2 titre");
+        livre2.setId(222);
+        livre2.setTitre("titi");
+        livre2.setAuteur("jkr");
+
+        livre3.setTitre("livre3 titre");
+        livre3.setId(333);
+        livre3.setTitre("tata");
+        livre3.setAuteur("jkr");
+
+        livreList.add(livre1);
+        livreList.add(livre2);
+        livreList.add(livre3);
+
+        Mockito.when(livreRepositoryMock.rechercherParAuteurOuTitre("%jkr%")).thenReturn(livreList);
+
+        livreList2 = mockedLivreService.rechercherParAuteurOuTitre("jkr");
+
+        assertEquals(livreList2.size(), 3);
+
+    }
 }

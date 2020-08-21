@@ -43,10 +43,10 @@ public class ViewController {
         int nbExemplaires = exemplaireService.calculNbDispo(livre);
         int nbUtilisateurAyantReserve = exemplaireService.calculNbReservation(livre);
         LivreBean livreBean = rechercherLivres.prochaineDispo(livre.getId());
+
         UtilisateurBean utilisateurBean = (UtilisateurBean) authentication.getPrincipal();
-        //TODO ajouter condition pour que le bouton ne réaparaisse quand on a deja une reservation ... voir pour une condition !!!!!
-        model.addAttribute("livreBean", livreBean);
         model.addAttribute("nbExemplaires", nbExemplaires);
+        model.addAttribute("livreBean", livreBean);
         model.addAttribute("nbReservation", nbUtilisateurAyantReserve);
         model.addAttribute("livre", livre);
         model.addAttribute("utilisateur", utilisateurBean);
@@ -94,7 +94,7 @@ public class ViewController {
         model.addAttribute("utilisateurId", ((UtilisateurBean) authentication.getPrincipal()).getId());
         return "liste-de-mes-reservations";
     }
-//TODO FINIR
+
     @GetMapping(value = "/annuler-reservation/{livreId}/{utilisateurId}")
     public String annulerReservation(Model model, @PathVariable int livreId, Authentication authentication) {
         LivreBean livre = rechercherLivres.recupererUnLivre(livreId);

@@ -105,7 +105,6 @@ public class LivreServiceImpl implements LivreService {
     }
 
 
-    //TODO A TESTER
     private Exemplaire calculerDateRetour(Exemplaire exemplaire) {
         if (exemplaire.isProlongerEmprunt()) {
             exemplaire.setDateRetour(exemplaire.getDateDemprunt().plusDays(PERIODE_PROLONGEE_DE_PRET));
@@ -165,16 +164,23 @@ public class LivreServiceImpl implements LivreService {
                 calculerDateRetour(exemplaire1);
                 if (exemplaireComparaison.getDateRetour().isBefore(exemplaire1.getDateRetour()) && exemplaire1.getDateRetour().isAfter(LocalDate.now()))
                     exemplaireComparaison = exemplaire1;
+//            }
+                exemplaireComparaison.setProchaineDispo(exemplaireComparaison.getDateRetour());
+
+//        }
+                listExemplaire.add(exemplaireComparaison);
+                livre.setExemplaireList(listExemplaire);
+
+            } else {
+                List<Exemplaire> listExemplaireVide = new ArrayList<>();
+                livre.setExemplaireList(listExemplaireVide);
             }
-            exemplaireComparaison.setProchaineDispo(exemplaireComparaison.getDateRetour());
 
         }
-        listExemplaire.add(exemplaireComparaison);
-        livre.setExemplaireList(listExemplaire);
-
-
         return livre;
+
     }
+
 
     public Livre reservationLivre(int livreId, int utilisateurId) {
         Livre livre = livreRepository.findById(livreId);

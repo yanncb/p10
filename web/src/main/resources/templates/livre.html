@@ -27,13 +27,18 @@
             <td th:text="${nbExemplaires}"></td>
             <th:text th:each="exemplaire : ${livreBean.exemplaireList}">
                 <td th:text="${exemplaire.dateRetour}"></td>
-                <td th:if="${exemplaire.dateRetour == null}">Aucune disponibilité pour l'instant nous attendons les
-                    retardataires...
-                </td>
+
             </th:text>
-                <td th:if="${nbReservation == 0}">Aucune réservation en cours</td>
-                <td th:if="${nbReservation != 0}" th:text="${nbReservation}"></td>
-            <td th:if="${nbExemplaires == 0}"><a th:href="@{/reserver/{livreId}/{utilisateurId}(livreId=${livre.id},utilisateurId=${utilisateur.id})}" class="btn btn-success">Réserver le prochain livre disponible</a>
+
+            <td th:if="${livreBean.exemplaireList.size() == 0}">Aucune disponibilité pour l'instant nous attendons les
+                retardataires...
+            </td>
+
+            <td th:if="${nbReservation == 0}">Aucune réservation en cours</td>
+            <td th:if="${nbReservation != 0}" th:text="${nbReservation}"></td>
+            <td th:if="${nbExemplaires == 0}"><a
+                    th:href="@{/reserver/{livreId}/{utilisateurId}(livreId=${livre.id},utilisateurId=${utilisateur.id})}"
+                    class="btn btn-success">Réserver le prochain livre disponible</a>
             </td>
         </tr>
         </tbody>

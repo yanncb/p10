@@ -26,7 +26,6 @@ public class BatchJob {
     Job job;
 
     public BatchJob() {
-        System.out.println("=>>>>>>>>>>>>>>>>>>>>>>>>>>> HEEELP");
     }
 
     /**

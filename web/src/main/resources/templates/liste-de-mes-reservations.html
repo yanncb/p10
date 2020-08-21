@@ -35,14 +35,13 @@
 
                     <th:text th:each="exemplaire : ${livre.exemplaireList}">
 
-                        <td th:if="${exemplaire.getProchaineDispo() == null}">Aucune disponibilité pour l'instant nous
-                            attendons les retardataires...
-                        </td>
-
                         <td th:if="${exemplaire.getProchaineDispo() != null }"
                             th:text="${exemplaire.getProchaineDispo()}"></td>
 
                     </th:text>
+
+                    <td th:if="${livre.exemplaireList.size() == 0}">Aucune disponibilité pour l'instant
+                    </td>
                     <td th:text="${livre.getPositionFile()}"></td>
 
                     <td>

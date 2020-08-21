@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/configuration/BatchJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/livre.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +57,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1dRzzwBQH0LS9OPzO3ZC7ehvrgY" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
@@ -236,7 +236,7 @@
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
       <workItem from="1597062006668" duration="20973000" />
-      <workItem from="1597324137332" duration="64661000" />
+      <workItem from="1597324137332" duration="66905000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -434,7 +434,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597850323432</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="debug affichage ihm">
+      <created>1598007087641</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1598007087641</updated>
+    </task>
+    <task id="LOCAL-00030" summary="0.0.4.RELEASE">
+      <created>1598007154790</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1598007154790</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,8 +478,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajout" />
-    <MESSAGE value="first commit" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="projet fonctionnement initial ok. modification des ports." />
     <MESSAGE value="Réparation d'un bug. Si date limite est dépassé plus possible de prolonger l'emprunt." />
     <MESSAGE value="modification du versionning des pom passage en 0.0.2 RELEASE" />
@@ -489,7 +502,9 @@
     <MESSAGE value="ajout de test plus refacto de methode et debugage." />
     <MESSAGE value="finalisation des tests debug d'une fonctionnalité du batch" />
     <MESSAGE value="ajout de la config des tests d'integration de postman." />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de la config des tests d'integration de postman." />
+    <MESSAGE value="debug affichage ihm" />
+    <MESSAGE value="0.0.4.RELEASE" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.0.4.RELEASE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

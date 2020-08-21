@@ -24,6 +24,8 @@ Ce qu'il est requis pour commencer avec votre projet...
 - Spring Boot
 - Base de donnée PostgresSql
 - Fake SMTP port : 80
+- PostMan
+
 
 
 
@@ -56,7 +58,9 @@ Une autre manière de faire est de déposer le fichier war directement dans le d
 ## Démarrage
  
  Une fois lancé le demarrage se fera automatiquement
- 
+ Pour lancer Postman il faut recuperer le fichier test bibliotheque integration.postman_collection.json
+ Puis lancer postman runner importer la collection et lancer les tests. (en cas de déploiement sur un serveur autre qu'en local
+ il faut également modifié les url avant les tests.)
 
 ## Fabriqué avec
 

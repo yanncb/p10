@@ -17,10 +17,10 @@ public interface ProxyBatchToBack {
     List<Livre> listeDeLivreDontLesExemplairesSontEnRetard();
 
     @GetMapping(value = "/exemplaire-plus-de-deux-jours")
-    List<Reservation> listeDeReservationDontLesDatesDeRetourSontSuperieurA48h();
-
-    @PostMapping(value = "/liste-a-supprimer-plus-48h")
-    List<Reservation> listeDeReservationASupprimer(@RequestBody List<Reservation> reservationList);
+    void listeDeReservationDontLesDatesDeRetourSontSuperieurA48h();
+//
+//    @PostMapping(value = "/liste-a-supprimer-plus-48h")
+//    List<Reservation> listeDeReservationASupprimer(@RequestBody List<Reservation> reservationList);
 
 }
 

@@ -3,6 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="3b66edd6-c4be-405b-8215-80ae2684c17c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/Service/BatchServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/batch/BatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/batch/BatchApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/ReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/LivreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/repository/ReservationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/liste-de-mes-reservations.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +24,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="376" />
+    <option name="myElementSize" value="201" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -72,6 +85,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../projet-9" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -111,7 +125,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.WebApplication">
+  <component name="RunManager" selected="JUnit.All in services (1)">
+    <configuration name="All in p10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="p10" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in services (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="services" />
       <option name="PACKAGE_NAME" value="" />
@@ -147,22 +169,6 @@
       <option name="PACKAGE_NAME" value="com.bibliotheque.service.impl" />
       <option name="MAIN_CLASS_NAME" value="com.bibliotheque.service.impl.LivreServiceImplTest" />
       <option name="METHOD_NAME" value="rechercherParAuteurOuTitre" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LivreServiceImplTest.rechercherTousLesLivres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="services" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bibliotheque.service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.bibliotheque.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.bibliotheque.service.impl.LivreServiceImplTest" />
-      <option name="METHOD_NAME" value="rechercherTousLesLivres" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,10 +214,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in services (1)" />
+        <item itemvalue="JUnit.All in p10" />
         <item itemvalue="JUnit.ReservationServiceImplTest.supprimerListeDeReservation" />
         <item itemvalue="JUnit.LivreServiceImplTest.rechercherParAuteurOuTitre" />
         <item itemvalue="JUnit.LivreServiceImplTest.findById" />
-        <item itemvalue="JUnit.LivreServiceImplTest.rechercherTousLesLivres" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +239,7 @@
       <workItem from="1596558431632" duration="10843000" />
       <workItem from="1596725589302" duration="19694000" />
       <workItem from="1597062006668" duration="20973000" />
-      <workItem from="1597324137332" duration="67888000" />
+      <workItem from="1597324137332" duration="82942000" />
     </task>
     <task id="LOCAL-00001" summary="ajout">
       <created>1592405799769</created>
@@ -452,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598009965524</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="ajout de contenu dans le postman">
+      <created>1598010939970</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1598010939970</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +496,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Réparation d'un bug. Si date limite est dépassé plus possible de prolonger l'emprunt." />
     <MESSAGE value="modification du versionning des pom passage en 0.0.2 RELEASE" />
     <MESSAGE value="finalisation des IHM en bouchonné ." />
     <MESSAGE value="déplacement du bouchon depuis les controller front aux controller back + ajout des fonctions des boutons bochonnés." />
@@ -508,7 +520,8 @@
     <MESSAGE value="debug affichage ihm" />
     <MESSAGE value="0.0.4.RELEASE" />
     <MESSAGE value="ajout d'un readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout d'un readme" />
+    <MESSAGE value="ajout de contenu dans le postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de contenu dans le postman" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -519,19 +532,9 @@
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/proxies/ProxyBatchToBack.java</url>
           <line>15</line>
           <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
@@ -539,18 +542,33 @@
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/LivreServiceImpl.java</url>
-          <line>155</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/src/main/java/com/bibliotheque/web/controller/ViewController.java</url>
           <line>44</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/batch/src/main/java/com/bibliotheque/step/SuppressionReseApres48hsansRecuperation.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/service/impl/ReservationServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/services/src/test/java/com/bibliotheque/service/impl/LivreServiceImplTest.java</url>
-          <line>320</line>
+          <line>319</line>
           <properties class="com.bibliotheque.service.impl.LivreServiceImplTest" method="rechercherParAuteurOuTitre">
             <option name="EMULATED" value="true" />
           </properties>
@@ -561,14 +579,6 @@
           <line>16</line>
           <properties class="com.bibliotheque.proxies.ProxyBatchToBack" method="listeDeLivreDontLesExemplairesSontEnRetard" />
           <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/services/src/main/java/com/bibliotheque/controller/LivreController.java</url>
-          <line>29</line>
-          <properties class="com.bibliotheque.controller.LivreController" method="listeDeLivreEnRetard">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -581,6 +591,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/p10$All_in_services__2_.ic" NAME="All in services (2) Coverage Results" MODIFIED="1597845293684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/p10$All_in_services.ic" NAME="All in services Coverage Results" MODIFIED="1597753274000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/p10$All_in_services__1_.ic" NAME="All in services (1) Coverage Results" MODIFIED="1598001556512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/p10$All_in_p10.ic" NAME="All in p10 Coverage Results" MODIFIED="1598197737361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/p10$All_in_services__1_.ic" NAME="All in services (1) Coverage Results" MODIFIED="1598259889954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

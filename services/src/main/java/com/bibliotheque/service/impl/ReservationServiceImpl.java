@@ -47,13 +47,17 @@ public class ReservationServiceImpl implements ReservationService {
 
     @Override
     public void supprimerListeDeReservation(List<Reservation> reservationList) {
+
         for (Reservation reservation : reservationList) {
-            reservationRepository.delete(reservation);
-            Livre livre = livreRepository.findByReservationId(reservation.getId());
-            Utilisateur utilisateur = premierUtilisateurDansLaFileDattente(livre.getId());
-            envoieDeMailPourPremierDeLaListeDattente(utilisateur, livre);
-            reservation.setDateEnvoieMail(LocalDate.now());
-            reservationRepository.save(reservation);
+            if (reservation.getDateEnvoieMail().plusDays(2).isBefore(LocalDate.now())) {
+
+                Livre livre = livreRepository.findByReservationId(reservation.getId());
+                reservationRepository.delete(reservation);
+                Utilisateur utilisateur = premierUtilisateurDansLaFileDattente(livre.getId());
+                envoieDeMailPourPremierDeLaListeDattente(utilisateur, livre);
+                reservation.setDateEnvoieMail(LocalDate.now());
+                reservationRepository.save(reservation);
+            }
         }
 
     }

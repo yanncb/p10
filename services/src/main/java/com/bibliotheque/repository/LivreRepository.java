@@ -2,6 +2,7 @@ package com.bibliotheque.repository;
 
 import com.bibliotheque.models.Exemplaire;
 import com.bibliotheque.models.Livre;
+import com.bibliotheque.models.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -31,7 +32,11 @@ public interface LivreRepository extends JpaRepository<Livre, Integer> {
 
     Livre findByExemplaireList(Exemplaire exemplaire);
 
-    @Query("select l from Livre l join fetch l.reservationList r where  r.id= :reservationId")
+    @Query("select distinct l from Livre l join fetch l.reservationList r where  r.id = :reservationId")
     Livre findByReservationId(@Param("reservationId") int reservationId);
+
+
+
+
 
 }

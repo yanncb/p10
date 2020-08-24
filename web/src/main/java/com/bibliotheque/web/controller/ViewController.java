@@ -54,7 +54,6 @@ public class ViewController {
         return "livre";
     }
 
-//TODO FINIR
     @GetMapping(value = "/reserver/{livreId}/{utilisateurId}")
     public String reserverUnLivre(Model model, @PathVariable int livreId, Authentication authentication) {
         LivreBean livre = rechercherLivres.recupererUnLivre(livreId);

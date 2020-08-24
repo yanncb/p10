@@ -233,7 +233,6 @@ public class LivreServiceImpl implements LivreService {
         return exemplaire;
     }
 
-    //TODO A TESTER en MOCK
 
     @Override
     public Exemplaire retourEmprunt(int exemplaireId) {

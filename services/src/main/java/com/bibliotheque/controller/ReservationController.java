@@ -3,7 +3,8 @@ package com.bibliotheque.controller;
 import com.bibliotheque.models.Reservation;
 import com.bibliotheque.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -14,16 +15,12 @@ public class ReservationController {
     ReservationService reservationService;
 
     @GetMapping(value = "/exemplaire-plus-de-deux-jours")
-    public List<Reservation> listeDeReservationAyantUnExemplaireRevenuDepuisplusDe48h(){
+    public void listeDeReservationAyantUnExemplaireRevenuDepuisplusDe48h() {
         List<Reservation> reservationList = reservationService.trouverlisteDeReservationAyantUneDateDenvoieDeMail();
-        return reservationList;
-    }
-
-    @PostMapping(value = "/liste-a-supprimer-plus-48h")
-    public void listeDeReservationASupprimer(@RequestBody List<Reservation> reservationList){
         reservationService.supprimerListeDeReservation(reservationList);
 
     }
 
 
 }
+

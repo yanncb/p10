@@ -37,19 +37,7 @@ public class SuppressionReseApres48hsansRecuperation implements Tasklet, StepExe
     @Override
     public RepeatStatus execute(StepContribution stepContribution,
                                 ChunkContext chunkContext) throws Exception {
-        List<Reservation> listeDeReservation = batchService.listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h();
-        List<Reservation> listeTrieDeReservationASupprimer = new ArrayList<>();
-        try {
-            for (Reservation reservation : listeDeReservation) {
-                if (reservation.getDateEnvoieMail().isAfter(reservation.getDateEnvoieMail().plusDays(2))) {
-                    listeTrieDeReservationASupprimer.add(reservation);
-                }
-            }
-            proxyBatchToBack.listeDeReservationASupprimer(listeTrieDeReservationASupprimer);
-            logger.info("Custom Step is running ...");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        batchService.listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h();
         return RepeatStatus.FINISHED;
     }
 

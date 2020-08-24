@@ -154,7 +154,6 @@ class LivreServiceImplTest {
     }
 
 
-    //TODO A FINR
     @Test
     void reservationLivre() {
         Livre livre = new Livre();

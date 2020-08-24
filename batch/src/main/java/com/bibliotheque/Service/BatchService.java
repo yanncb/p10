@@ -21,7 +21,7 @@ public interface BatchService {
      * demande au back la liste de reservation ayant une date de retour en base ce qui signifie qu'une reservation est en cours.
      * @return liste de reservation
      */
-    List<Reservation>listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h();
+    void listeDesReservationAyantUnExemplaireDispoDepuisPlusDe48h();
 
 
     /**
